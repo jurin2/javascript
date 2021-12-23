@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 선언과 주의사항</title>
+</head>
+<body>
+    <h1>변수 선언과 주의사항</h1>
+    <p>변수를 선언하고 사용할 때의 주의사항</p>
+    <ol>
+        <li>
+            변수명은 반드시 '영문','_','$'로 시작하여야 한다.
+        </li>
+
+
+    <pre>
+        <code>
+            let box => O
+            let 1box => X
+            let box1 => O
+            let $box => O
+            let _box => O
+            let !box => X
+        </code>
+    </pre>
+    <li>
+        변수명에는 '영문','숫자','_','$'를 사용할 수 있다.
+    </li>
+    <li>
+        예약어('document','window'...)는 변수명으로 사용할 수 없다.
+    </li>
+    <li>
+        변수명은 대소문자를 구분한다('a','A'는 서로 다른변수)
+    </li>
+    <li>
+        되도록 낙타표기법으로 선언한다(let happy_new_year => X, let happyNewYear => O)
+    </li>
+    <li>
+        되도록 의미있는 단어/문장으로 선언한다(let img01 => X, let imgBanner => O)
+    </li>
+</ol>
+</body>
+</html>

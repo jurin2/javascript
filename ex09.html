@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+    <style>
+        #gender,#result{
+            display: block;
+            width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        input[value="처리"]{
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="gender" placeholder="성별을 입력하세요(예:'남','여')">
+    <input type="button" value="처리" onclick="
+        let _gender = document.getElementById('gender');
+        let _result = document.getElementById('result');
+        _result.value = _gender.value == '남' ? '장가' : _gender.value == '여' ? '시집' : '입력값은 반드시 남과여만 가능합니다.';
+    ">
+    <hr>
+    <input type="text" id="result" placeholder="이곳에 결과가 나옵니다.">
+
+    <script>
+        
+    </script>
+</body>
+</html>

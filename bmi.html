@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI계산기</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        label{
+            display: inline-block;
+            width: 80px;
+        }
+        .wrap{
+            max-width: 380px;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+        header,.sec{
+            border-bottom: 1px solid #000;
+            padding: 12px;
+        }
+        header{
+            background-color: #0f0;
+        }
+        .input h2{
+            display: none;
+        }
+        .input p{
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px; 
+        }
+        .output{
+            border-bottom: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1>BMI계산기</h1>
+        </header>
+        <section class="sec input">
+            <h2>입력자료</h2>
+            <p>체질량지수(BMI) 계산기에 오신것을 환영합니다. 이 프로그램은 누구나 그냥 쓰셔도 무방합니다.</p>
+            <p>체질량지수(BMI) 계산식은 측정자의 몸무게(kg)를 키(m)의 제곱으로 나눈 값으로 계산합니다.</p>
+            <label for="kg">몸무게</label>
+            <input id="kg" type="text" placeholder="kg">
+            <br>
+            <label for="cm">키</label>
+            <input id="cm" type="text" placeholder="cm">
+            <br>
+            <input type="button" value="계산" onclick="
+                let _kg = document.getElementById('kg');
+                let _cm = document.getElementById('cm');
+                let _bmi = document.getElementById('bmi');
+                let _result = document.getElementById('result');
+
+                _bmi.value = _kg.value / ((_cm.value / 100) ** 2);
+                _result.value = _bmi.value >=26 ? '비만' : _bmi.value >=23 ? '과체중' : _bmi.value >= 18.5 ? '정상' : '저체중';
+            ">
+        </section>
+
+        <section class="sec output">
+            <label for="bmi">BMI지수</label>
+            <input id="bmi" type="text">
+            <br>
+            <label for="result">판정</label>
+            <input id="result" type="text">
+        </section>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>
