@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>짝수 홀수 판별</title>
+</head>
+<body>
+    <script>
+        let inputData = prompt('판별할 숫자를 입력하세요');
+        // alert(inputData);
+        let nam = inputData % 2;
+        if(nam == 0){
+            document.write('입력된 ' + inputData + '은 짝수입니다.');
+        } else{
+            document.write('입력된 ' + inputData + '은 홀수입니다.');
+        }
+
+    </script>
+</body>
+</html>

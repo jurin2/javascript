@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원탈퇴</title>
+</head>
+<body>
+    <label><input type="checkbox" id="chk01">회원탈퇴</label>
+    <button type="button">탈퇴하기</button>
+
+    <script>
+        let _chk = document.getElementById('chk01');
+        let _btn = document.querySelector('button');
+        
+        _btn.addEventListener('click',function(){
+            if(_chk.checked){
+                member();
+            }
+        })
+
+        // _btn.onclick = function(){
+        //     if(_chk.checked){
+        //         member();
+        //     }
+        // }
+
+        function member(){
+            let conf = confirm('정말 탈퇴?');
+            if(conf){
+                alert('탈퇴완료');
+            } else{
+                alert('탈퇴취소');
+            }
+        }
+    </script>
+</body>
+</html>
