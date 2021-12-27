@@ -10,6 +10,7 @@
     <script>
         let cnt = 1;
         while(cnt<=9){
+            break;
             document.write('2 X ' + cnt + '=' + 2*cnt);
             document.write('<br>');
             cnt++;
@@ -18,7 +19,16 @@
         
         for(let cnt2=1;cnt2<=9;cnt2++){
             document.write('3 X ' + cnt2 + '=' + 3*cnt,'<br>');
+            if(cnt2>=5){
+                break;
+            }
+        }
 
+        for(let cnt3=1; cnt3<=9; cnt3++){
+            if(cnt3<=5){
+                continue;
+            }
+            document.write('4 X ' + cnt3 + '=' + 4*cnt3,'<br>');
         }
     </script>
 </body>
