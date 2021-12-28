@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>성 : <input type="text"></label>
+    <br>
+    <label>이름 : <input type="text"></label>
+    <br>
+    <label>전화번호 : <input type="text"></label>
+    <br>
+    <label>전자우편 : <input type="text"></label>
+
+
+
+
+    <script>
+        let _input = document.getElementsByTagName('input');  
+              
+        let userName = prompt('여권이름(영문)을 입력해주세요');
+        let userPhoneNumber = prompt('전화번호를 넣어주세요');
+        let userEmail = prompt('E-mail을 입력해주세요');
+        
+        userName = userName.toUpperCase();
+
+        let serName = userName.substring(0,userName.indexOf(' '));
+        let name = userName.substring(userName.indexOf(' ')+1,userName.length-1);
+        let startIndex = userPhoneNumber.length-4;
+        let changeString = userPhoneNumber.substr(startIndex,4);
+        changeString = userPhoneNumber.replace(changeString,'****');
+
+        _input[0].value = serName;
+        _input[1].value = name;
+        _input[2].value = changeString;
+        if(userEmail.indexOf('@')>=7 && userEmail.indexOf('.') > userEmail.indexOf('@')){
+            _input[3].value = userEmail;
+        }
+ 
+
+    </script>
+</body>
+</html>
