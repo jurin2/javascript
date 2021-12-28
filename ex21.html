@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join, concat, slice, sort, reverse</title>
+</head>
+<body>
+    <h1>length, join(), concat(), slice(), reverse()</h1>
+    <script>
+        document.write('<br>');
+        document.write('<h2>length는 배열요소의 갯수를 반환(array.length)</h2>');
+
+        let arr01 = ['서울','경기','인천','충청','대전','광주'];
+        let arr02 = ['전라','경상','강원','제주','대구','부산','울산'];
+
+        document.write('arr01 = ');
+        for(let cnt=0; cnt<arr01.length; cnt++){
+            document.write(arr01[cnt]);
+        }
+        document.write('<br>');
+        document.write('arr02 = ');
+        for(let cnt=0; cnt<arr02.length; cnt++){
+            document.write(arr02[cnt]);
+        }
+        document.write('<br>');
+        document.write('arr02의 뒤에서 2번째 값은 = ' + arr02[arr02.length-2]);
+
+        document.write('<br>');
+        document.write('<h2>join()은 배열개체를 스트링으로 변환(array.join(결합문자열)</h2>');
+        let result = arr01.join('-');
+        let result2 = arr02.join();
+        console.log(typeof result);
+        document.write(result,'<br>');
+        document.write(result2,'<br>');
+
+        document.write('<br>');
+        document.write('<h2>concat()은 배열개체를 병합한다(array1.concat(array2)</h2>');
+        let result3 = arr01.concat(arr02);
+        console.log(typeof result3);
+        document.write(result3,'<br>');
+        
+        document.write('<br>');
+        document.write('<h2>sort()은 배열개체를 오름차순 정렬한다(array.sort()</h2>');
+        let result4 = result3.sort();
+        console.log(typeof result4);
+        document.write(result4,'<br>');
+
+
+        document.write('<br>');
+        document.write('<h2>reverse()은 배열개체를 역순으로 배열한다(array.reverse()</h2>');
+        let result5 = result4.reverse();
+        console.log(typeof result5);
+        document.write(result5,'<br>');
+
+        document.write('<br>');
+        document.write('<h2>slice()은 배열개체를 시작인덱스에서 끝인덱스 전까지 추출한다(array.slice(start index,end index)</h2>');
+        let result6 = result5.slice(2,6);
+        console.log(typeof result6);
+        document.write(result6,'<br>');
+
+
+    </script>
+</body>
+</html>

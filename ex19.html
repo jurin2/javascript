@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개체,객체(Object))</title>
+</head>
+<body>
+    <script>
+        let a = 10;
+        let b = 'korea';
+        let c = true;
+        let d = null;
+        let e = document.querySelector('body');
+        console.log('a=' + typeof a);
+        console.log('b=' + typeof b);
+        console.log('c=' + typeof c);
+        console.log('d=' + typeof d);
+        console.log('e=' + typeof e);
+
+        let arrayA = new Array();
+        arrayA[0] = 10;
+        arrayA[1] = 'korea';
+        arrayA[2] = true;
+        arrayA[3] = null;
+        arrayA[4] = document.querySelector('body');
+        console.log('arrayA[0] = ' + typeof arrayA[0]);
+        console.log('arrayA[1] = ' + typeof arrayA[1]);
+        console.log('arrayA[2] = ' + typeof arrayA[2]);
+        console.log('arrayA[3] = ' + typeof arrayA[3]);
+        console.log('arrayA[4] = ' + typeof arrayA[4]);
+
+        let arrayB = [10,'korea',true,null];
+        console.log('arrayB = ' + typeof arrayB);
+        console.log('arrayB[0] = ' + typeof arrayB[0]);
+        console.log('arrayB[1] = ' + typeof arrayB[1]);
+        console.log('arrayB[2] = ' + typeof arrayB[2]);
+        console.log('arrayB[3] = ' + typeof arrayB[3]);
+
+        let arrayC = 'korea';
+        console.log('arrayC = ' + typeof arrayC);
+        console.log(arrayC[0]);
+        console.log(arrayC[3]);
+
+    </script>
+</body>
+</html>
