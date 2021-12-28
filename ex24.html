@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 개체</title>
+</head>
+<body>
+    <script>
+        // let arr01 = new Array();
+        // console.log(typeof arr01);
+        // let arr02 = [10,20,30];
+        // console.log(typeof arr02);
+        // let arr03 = new String();
+        // console.log(typeof arr03);
+        // let arr04 = 'korea';
+        // console.log(typeof arr04);
+        // console.log(arr02[0]);
+        // console.log(arr04[0]);
+        // let arr05 = 500;
+        // console.log(arr05[0]);
+
+        let t = 'i love you!';
+        
+        document.write('<h1>문자열개체</h1>');
+        document.write('<h2>array.length 문자열의 갯수</h2>');
+        document.write(t + '=' + t.length + '<br>');
+
+        document.write('<h2>array.charAt(index) 해당 인덱스값 출력</h2>');
+        document.write(t.charAt(3) + '<br>');
+
+        document.write('<h2>array.indexOf(찾을 문자) 찾을 문자의 위치 인덱스</h2>');
+        document.write(t.indexOf('o') + '<br>');
+        document.write(t.lastIndexOf('o') + '<br>');
+        document.write(t.indexOf('k') + '<br>');
+        document.write(t.search('k') + '<br>');
+        document.write(t.search('o') + '<br>');
+
+        document.write('<h2>array.match(찾을 문자) 찾을 문자가 존재하면 문자출력, 존재하지 않으면 null</h2>');
+        document.write(t.match('you') + '<br>');
+        document.write(t.match('me') + '<br>');
+
+        document.write('<h2>array.replace(찾을 문자,바꿀 문자열) 찾을 문자열을 바꿀 문자열로 치환</h2>');
+        let result = t.replace('you','me');
+        document.write(result + '<br>');
+        result = result.replace('i','you');
+        document.write(result + '<br>');
+
+        document.write('<h2>array.slice(시작인덱스,끝인덱스)</h2>');
+        document.write(t.slice(2,6) + '<br>');
+        document.write(t.slice(6,-2) + '<br>');
+        document.write(t.slice(t.indexOf(' ')+1,t.lastIndexOf(' ')) + '<br>');
+        document.write(t.slice(t.lastIndexOf(' ')+1,t.length));
+
+        document.write('<h2>array.substring(시작인덱스,끝인덱스)</h2>');
+        document.write(t.substring(2,6) + '<br>');
+        document.write(t.substring(1,7) + '<br>');
+        document.write(t.substring(t.indexOf(' ')+1,t.lastIndexOf(' ')) + '<br>');
+        document.write(t.substring(t.lastIndexOf(' ')+1,t.length));
+
+        document.write('<h2>array.substr(시작인덱스,글자수)</h2>');
+        document.write(t.substr(2,6) + '<br>');
+        document.write(t.substr(6,-2) + '<br>');
+
+        document.write('<h2>array.split(문자열) 문자열을 기준으로 분리 배열생성</h2>');
+        let arr = t.split(' ');
+        document.write(arr[0] + '<br>');
+        document.write(arr[1] + '<br>');
+        document.write(arr[2] + '<br>');
+
+        for(let cnt=0;cnt<arr.length;cnt++){
+            document.write(arr[cnt]+'<br>');
+        }
+
+        document.write('<h2>array.toUpperCase(문자열) 문자열을 대문자로</h2>');
+        document.write('<h2>array.toLowerCase(문자열) 문자열을 소문자로</h2>');
+        let upperT = t.toUpperCase();
+        let lowerT = upperT.toLowerCase();
+
+        document.write(upperT+'<br>')
+        document.write(lowerT+'<br>')
+        // document.write(t.toUpperCase()+'<br>')
+        // document.write(t.toLowerCase()+'<br>')
+
+        document.write(upperT.concat(lowerT));
+
+        document.write('<h2>array.charCodeAt(index) 문자열이 ASCII코드값을 구한다</h2>');
+        document.write(t.charCodeAt(0)-32);
+
+        document.write('<h2>array.fromCharCode(ASCII) ASCII코드에 해당하는 값을 구한다</h2>');
+        let char = 'I LOVE YOU!';
+        for(let cnt=0; cnt<char.length; cnt++){
+            if(char.charCodeAt(cnt)>=65 && char.charCodeAt(cnt)<=90){
+            document.write(String.fromCharCode(char.charCodeAt(cnt)+32));
+          }else{
+            document.write(String.fromCharCode(char.charCodeAt(cnt)))
+          }
+        }
+
+        document.write('<h2>array.trim() 불필요한 공백제거</h2>');
+        let t2 = '   i  you  love  !    ';
+        document.write(t2.length + '<br>');
+        document.write(t2.trim().length + '<br>');
+        document.write(t2.trim() + '<br>');
+
+    </script>
+</body>
+</html>
