@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 반복</title>
+    <style>
+        #container>div:first-child,
+        #container>div:last-child{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: red;
+        }
+        #container>div:last-child{
+            background-color: green;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>배열의 반복</h1>
+    <div id="container">
+        <div class="box box01"></div>
+        <div class="box box02"></div>
+        <div class="box box03"></div>
+        <div class="box box04"></div>
+        <div class="box box05" onclick="
+            childBox[4].style.backgrondColor = 'blue';
+        "></div>
+        <div class="box box06"></div>
+        <div class="box box07"></div>
+        <div class="box box08"></div>
+        <div class="box box09"></div>
+        <div class="box box10"></div>
+    </div>
+
+    <script>
+        let childBox = document.getElementsByClassName('box');
+        let parBox = document.getElementById('container');
+        
+
+        for(let cnt=0; cnt<childBox.length ; cnt++){
+            childBox[cnt].innerHTML = cnt;
+        }
+
+        let newElement = document.createElement('div');
+        console.log(newElement);
+        newElement.id = 'div00';
+        console.log(newElement);
+        parBox.insertBefore(newElement,parBox.firstChild);
+
+        let chColor = document.getElementById('div00');
+        chColor.onclick = function(){
+            chColor.style.backgroundColor = '#00f';
+        }
+
+        
+        
+    </script>
+</body>
+</html>

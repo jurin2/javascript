@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열요소</title>
+</head>
+<body>
+    <h1>배열요소의 삽입/삭제</h1>
+    <h2>배열요소의 삽입</h22>
+    <h3>push()는 배열의 마지막 위치에 새로운 데이터 삽입</h3>
+    <div id="push"></div>
+    <h3>unshift()는 배열의 처음 위치에 새로운 데이터 삽입</h3>
+    <div id="unshift"></div>
+
+    <h2>배열요소의 삭제</h2>
+    <h3>pop()은 배열 요소의 첫번째 데이터를 삭제</h3>
+    <div id="pop"></div>
+    <h3>shift()는 배열 요소의 마지막 데이터를 삭제</h3>
+    <div id="shift"></div>
+
+    <h2>삽입/삭제/변경</h2>
+    <h3>splice(start index, delete num, insert value....)</h3>
+    <div id="splice-insert"></div>
+    <div id="splice-delete"></div>
+    <div id="splice-change"></div>
+    
+
+    <script>
+        let _push = document.getElementById('push');
+        let _unshift = document.getElementById('unshift');
+        let _pop = document.getElementById('pop');
+        let _shift = document.getElementById('shift');
+        let spIn = document.getElementById('splice-insert');
+        let spDe = document.getElementById('splice-delete');
+        let spCh = document.getElementById('splice-change');
+
+
+        let arr01 = [5,10,2,8,945];
+        console.log(arr01);
+        _push.innerHTML=arr01.push(500);
+
+        arr01.unshift(900);
+        _unshift.innerHTML=arr01;
+
+        arr01.pop();
+        _pop.innerHTML=arr01;
+
+        arr01.shift();
+        _shift.innerHTML=arr01;
+
+        arr01.splice(2,0,100,200);
+        spIn.innerHTML=arr01;
+
+        arr01.splice(2,2);
+        spDe.innerHTML=arr01;
+
+        arr01.splice(3,2,'팔','구백사십오');
+        spCh.innerHTML=arr01;
+
+    </script>
+</body>
+</html>
