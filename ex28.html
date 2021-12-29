@@ -12,28 +12,29 @@
     <button id="btn02">새창에서 400*400으로 열기</button>
     <button id="btn03">새창에서 400*400 왼쪽에서 떨어져서 열기</button>
     <button id="btn04">스크롤 잠금</button>
-    <button id="btn05">클릭</button>
+    <button id="btn05">주소표시줄 표시</button>
     <script>
         let btn01 = document.getElementById('btn01');
         let btn02 = document.getElementById('btn02');
         let btn03 = document.getElementById('btn03');
         let btn04 = document.getElementById('btn04');
         let btn05 = document.getElementById('btn05');
+       
         btn01.addEventListener('click',function(){
             window.open('https://www.naver.com','naver');
         });
-
         btn02.addEventListener('click',function(){
             open('https://www.naver.com','naver','width=400,height=400');
-        });
-
+        });        
         btn03.addEventListener('click',function(){
             open('https://www.naver.com','naver','width=400,height=400,left=400,top=400');
-        });
-
+        })
         btn04.addEventListener('click',function(){
             open('https://www.naver.com','naver','width=400,height=400,left=400,top=400,scrollbars = no');
-        });
+        })
+        btn05.addEventListener('click',function(){
+            open('https://www.naver.com','naver','width=400,height=400,left=400,top=400');
+        })
 
 
 
