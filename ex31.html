@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나머지 윈도우 메서드</title>
+</head>
+<body>
+    <button>새창열기</button>
+    <script>
+        window.alert('이것은 알림(alert)창입니다');
+        var tmp = window.prompt('이것은 입력(prompt)창입니다');
+        window.console.log('prompt의 결과는 '+ tmp);
+        var tmp = window.confirm('이것은 확인(confirm)창입니다');
+        document.write('confirm의 결과는 : ' + tmp);
+
+        document.querySelector('button').addEventListener('click',function(){
+            var tmp = open('','','width=200,height=200,left=100,top=100');
+            tmp.moveTo(300,300);
+            tmp.resizeTo(500,30000);
+        });
+
+
+
+    </script>
+</body>
+</html>
