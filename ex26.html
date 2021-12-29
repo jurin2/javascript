@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜시간변경</title>
+    <style>
+        *{
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let toDate = new Date();
+        document.write('현재 날짜 : ' + toDate + '<br>');
+
+        toDate.setFullYear(2020);
+        document.write('날짜 변경 날짜 : ' + toDate + '<br>');
+
+        toDate.setMonth(1);
+        document.write('월 변경 날짜 : ' + toDate + '<br>');
+
+        document.write(toDate.getTime());
+    </script>
+</body>
+</html>

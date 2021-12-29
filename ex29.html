@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일정시간마다 반복</title>
+    <style>
+        .count{
+            font-weight: 700;
+            font-size: 100px;
+            text-align: center;
+            line-height: 50vh;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes font-resize {
+            0%{font-size:100px;}
+            25%{font-size:150px;}
+            50%{font-size:120px;}
+            75%{font-size:170px;}
+            100%{font-size:140px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="count" id="count"></div>
+    <script>
+        let cnt = 10;
+        let _count = document.getElementById('count');
+        _count.innerHTML = cnt;
+        let inf = setInterval(function(){
+            if(cnt<=0){
+                _count.innerHTML = '꽝';
+                _count.style.animationName = 'font-resize';
+                // _count.style.fontSize = '200px';
+                clearInterval(inf);
+            }else{
+                _count.innerHTML = --cnt;     
+            }     
+        },200);
+
+    </script>
+</body>
+</html>

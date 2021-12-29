@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM(window 객체)</title>
+</head>
+<body>
+    <h1>window</h1>
+    <button id="btn01">새창에서 열기</button>
+    <button id="btn02">새창에서 400*400으로 열기</button>
+    <button id="btn03">새창에서 400*400 왼쪽에서 떨어져서 열기</button>
+    <button id="btn04">스크롤 잠금</button>
+    <button id="btn05">클릭</button>
+    <script>
+        let btn01 = document.getElementById('btn01');
+        let btn02 = document.getElementById('btn02');
+        let btn03 = document.getElementById('btn03');
+        let btn04 = document.getElementById('btn04');
+        let btn05 = document.getElementById('btn05');
+        btn01.addEventListener('click',function(){
+            window.open('https://www.naver.com','naver');
+        });
+
+        btn02.addEventListener('click',function(){
+            open('https://www.naver.com','naver','width=400,height=400');
+        });
+
+        btn03.addEventListener('click',function(){
+            open('https://www.naver.com','naver','width=400,height=400,left=400,top=400');
+        });
+
+        btn04.addEventListener('click',function(){
+            open('https://www.naver.com','naver','width=400,height=400,left=400,top=400,scrollbars = no');
+        });
+
+
+
+        // btn.addEventListener('click',function(){
+        //     window.location.href='https://www.naver.com';
+        // });
+    </script>
+</body>
+</html>

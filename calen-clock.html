@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력 - 시계</title>
+    <style>
+        .wrap{
+            /* width: 600px; */
+            height: 600px;
+            margin: 100px auto;
+            /* border: 1px solid #000; */
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .time{
+            font-weight: 700;
+            font-size: 100px;
+            color: #f00;
+        }
+        .date{
+            font-weight: 500;
+            font-size: 50px;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <section class="sec time" id="time">시계</section>
+        <section class="sec date" id="date">달력</section>
+    </section>
+
+    <script>
+        // 시간표시
+        setInterval(function(){
+            let date = new Date(); // 오늘의 날짜와 시간
+            let toHour = date.getHours(); // 현재시
+            let toMinute = date.getMinutes(); // 현재분
+            let toSecond = date.getSeconds(); // 현재초
+            let _time = document.getElementById('time'); // 시간표시 엘리먼트
+            _time.innerHTML = toHour + '시 ' + toMinute + '분 ' + toSecond + '초'; // 현재시간 표시
+        },1000);
+
+        // 날짜표시
+        setInterval(function(){ 
+            let date = new Date(); // 오늘의 날짜와 시간
+            let toYear = date.getFullYear(); // 올해년도
+            let toMonth = date.getMonth() + 1; // 이번달
+            let toDate = date.getDate(); // 오늘
+            let toDay = date.getDay(); // 오늘요일
+
+            // 숫자 요일 => 문자 요일
+            switch(toDay){
+                case 0 : toDay='일요일'; break;
+                case 1 : toDay='월요일'; break;
+                case 2 : toDay='화요일'; break;
+                case 3 : toDay='수요일'; break;
+                case 4 : toDay='목요일'; break;
+                case 5 : toDay='금요일'; break;
+                case 6 : toDay='토요일'; break;
+            }
+
+        let _date = document.getElementById('date'); //날짜 전달 엘리먼트
+        _date.innerHTML = toYear + '년 ' + toMonth + '월 ' + toDate + '일 ' + toDay;
+        },86400000)
+
+        let date = new Date(); // 오늘의 날짜와 시간
+            let toYear = date.getFullYear(); // 올해년도
+            let toMonth = date.getMonth() + 1; // 이번달
+            let toDate = date.getDate(); // 오늘
+            let toDay = date.getDay(); // 오늘요일
+
+            // 숫자 요일 => 문자 요일
+            switch(toDay){
+                case 0 : toDay='일요일'; break;
+                case 1 : toDay='월요일'; break;
+                case 2 : toDay='화요일'; break;
+                case 3 : toDay='수요일'; break;
+                case 4 : toDay='목요일'; break;
+                case 5 : toDay='금요일'; break;
+                case 6 : toDay='토요일'; break;
+            }
+
+        let _date = document.getElementById('date'); //날짜 전달 엘리먼트
+        _date.innerHTML = toYear + '년 ' + toMonth + '월 ' + toDate + '일 ' + toDay;
+
+       
+
+    </script>
+</body>
+</html>

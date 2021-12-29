@@ -66,7 +66,16 @@
                 let _result = document.getElementById('result');
 
                 _bmi.value = _kg.value / ((_cm.value / 100) ** 2);
-                _result.value = _bmi.value >=26 ? '비만' : _bmi.value >=23 ? '과체중' : _bmi.value >= 18.5 ? '정상' : '저체중';
+                // _result.value = _bmi.value >=26 ? '비만' : _bmi.value >=23 ? '과체중' : _bmi.value >= 18.5 ? '정상' : '저체중';
+                if(_bmi.value >= 26){
+                    _result.value = '비만';
+                } else if(_bmi.value >= 24){
+                    _result.value = '과체중';
+                } else if(_bmi.value >= 20){
+                    _result.value = '정상';
+                } else{
+                    _result.value = '저체중'
+                }
             ">
         </section>
 
