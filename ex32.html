@@ -18,6 +18,14 @@
 </head>
 <body>
     <script>
+        let scrWidth = screen.width;
+        let _body = document.querySelector('body');
+        if(scrWidth<=599){
+            _body.style.backgroundColor='#f00';
+        }else{
+            _body.style.backgroundColor='#0f0';
+        }
+
         console.log(screen.width);
         console.log(screen.height);
         console.log(screen.availWidth);
