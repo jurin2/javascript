@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소(엘리먼트)와 속성(프로퍼티,에드트뷰트) 생성</title>
+    <style>
+        .btn01,.btn02{
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            border: 2px solid #000;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+        }
+        .line,.btn01::before,.btn01::after{
+            width: 100%;
+            height: 20px;
+            background-color: #000;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .btn01::before,.btn01::after{
+            content: '';
+            display: block;
+            transform-origin: left top;        
+        }
+        .btn01.active::before{
+            transform-origin: left top;
+            transform: rotate(45deg);
+            width: 260px;
+        }
+        .btn01.active::after{
+            transform: rotate(-45deg);
+            width: 260px;
+        }
+        .btn01.active .line{
+            width: 0;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="btn01">
+        <div class="line"></div>
+    </div>
+    <div class="btn02">
+        <div class="line"></div>
+    </div>
+    <script>
+        let _btn01 = document.getElementsByClassName('btn01');
+        _btn01[0].onclick = function(){
+            _btn01[0].classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
