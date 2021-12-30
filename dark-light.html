@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크 라이트</title>
+    <style>
+        body.dark{
+            background-color: #000;
+        }
+        h1.dark,h2.dark{
+            color: #fff;
+        }
+        a.dark,p.dark{
+            color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>web</h1>
+    <ul>
+        <li><a href="#">web</a></li>
+        <li><a href="#">html</a></li>
+        <li><a href="#">css</a></li>
+        <li><a href="#">javascript</a></li>
+    </ul>
+    <hr>
+    <h2>web</h2>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit reprehenderit nam sequi ad officia similique amet sapiente culpa, totam accusamus. Dignissimos expedita aspernatur eos? Ea accusantium magni maiores ab tempora.
+    </p>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit reprehenderit nam sequi ad officia similique amet sapiente culpa, totam accusamus. Dignissimos expedita aspernatur eos? Ea accusantium magni maiores ab tempora.
+    </p>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit reprehenderit nam sequi ad officia similique amet sapiente culpa, totam accusamus. Dignissimos expedita aspernatur eos? Ea accusantium magni maiores ab tempora.
+    </p>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit reprehenderit nam sequi ad officia similique amet sapiente culpa, totam accusamus. Dignissimos expedita aspernatur eos? Ea accusantium magni maiores ab tempora.
+    </p>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit reprehenderit nam sequi ad officia similique amet sapiente culpa, totam accusamus. Dignissimos expedita aspernatur eos? Ea accusantium magni maiores ab tempora.
+    </p>
+    <button class="dark" id="dark">다크모드</button>
+    <button class="light" id="light">라이트모드</button>
+
+    <script>
+        // 트리거
+        let btnDark = document.getElementById('dark');
+        let btnLight = document.getElementById('light');
+
+        let _body = document.body;
+        // console.log(_body);
+        let _h1 = document.querySelector('h1');
+        let _aNode = document.getElementsByTagName('a');
+        let _h2 = document.querySelector('h2');
+        let _pNode = document.getElementsByTagName('p');
+
+        btnDark.onclick = function(){
+            _body.classList.add('dark');
+            _h1.classList.add('dark');
+            _h2.classList.add('dark');
+
+            for(let idx=0; idx<_aNode.length; idx++){
+                _aNode[idx].classList.add('dark');
+            }
+
+            for(let idx=0; idx<_pNode.length; idx++){
+                _pNode[idx].classList.add('dark');
+            }
+
+            // _body.style.backgroundColor = '#000';
+            // _h1.style.color = '#fff';
+
+            // for(let idx=0; idx<_aNode.length; idx++){
+            //     _aNode[idx].style.color='red';
+            // }
+
+            // for(let idx=0; idx<_pNode.length; idx++){
+            //     _pNode[idx].style.color='red';
+            // }
+        }
+
+        btnLight.addEventListener('click', function(){
+            _body.classList.remove('dark');
+            _h1.classList.remove('dark');
+            _h2.classList.remove('dark');
+
+            for(let idx=0; idx<_aNode.length; idx++){
+                _aNode[idx].classList.remove('dark');
+            }
+
+            for(let idx=0; idx<_pNode.length; idx++){
+                _pNode[idx].classList.remove('dark');
+            }
+
+            // _body.style.backgroundColor = '#fff';
+            // _h1.style.color = '#000';
+
+            // for(let idx=0; idx<_aNode.length; idx++){
+            //     _aNode[idx].style.color='#000';
+            // }
+
+            // for(let idx=0; idx<_pNode.length; idx++){
+            //     _pNode[idx].style.color='#000';
+            // }
+        })
+    </script>
+</body>
+</html>

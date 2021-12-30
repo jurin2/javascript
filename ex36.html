@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Document Object Model)</title>
+</head>
+<body>
+    <h1>DOM</h1>
+    <h2 id="el" class="el" name="el">element</h2>
+    <script>
+        document.write('문서에 기록');
+        console.log('===<h1>===');
+        console.log(document.querySelector('h1'));
+        console.log(document.querySelectorAll('h1')[0]);
+        console.log(document.getElementsByTagName('h1')[0]);
+        console.log('===<h2>===');
+        console.log(document.querySelector('h2'));
+        console.log(document.querySelectorAll('h2')[0]);
+        console.log(document.getElementsByTagName('h2')[0]);
+        console.log(document.getElementById('el'));
+        console.log(document.getElementsByClassName('el'));
+        console.log(document.getElementsByName('el'));
+    </script>
+</body>
+</html>

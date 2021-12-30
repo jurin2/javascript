@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일네임</title>
+</head>
+<body>
+    <script>
+        // 입력
+        let fileName = location.href;
+        console.log(typeof fileName);
+
+        // 처리
+        let stIndex = fileName.lastIndexOf('/') + 1;
+        let laIndex = fileName.length;
+
+        fileName = fileName.substring(stIndex,laIndex);
+
+        // 출력
+    
+        console.log('파일명 : ' + fileName);
+    </script>
+</body>
+</html>

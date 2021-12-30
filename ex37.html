@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간접/상대 선택자</title>
+    <style>
+        .red-color{
+            color: #f00;
+        }
+        .green-backcolor{
+            background-color: green;
+        }
+        .border-box{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>간접/상대 선택자</h1>
+    <div class="wrap">
+        <div class="container" id="inner">
+            <ul>
+                <li class="first">1번목록</li>
+                <li>2번목록</li>
+                <li class="last">3번목록</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // document.querySelector('ul').classList.add('red-color');
+        let _inner = document.getElementById('inner');
+
+        let _innerChilds = _inner.children;
+        _innerChilds[0].classList.add('red-color');
+
+        let parBox = _inner.parentNode
+        parBox.classList.add('green-backcolor');
+
+        let _bdBox = _inner.parentNode.parentNode.children[0];
+        _bdBox.classList.add('border-box');
+
+        for(let idx=0; idx<_inner.parentNode.classList.length; idx++){
+            console.log(_inner.parentNode.classList[idx]);  
+        }
+
+        console.log(_inner.id);
+        console.log(_inner.className);
+        console.log(_inner.tagName.toLowerCase());
+              
+    </script>
+</body>
+</html>
