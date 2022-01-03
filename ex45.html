@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의 종류</title>
+</head>
+<body>
+
+    <script>
+        // 기명함수
+        function fn01(){
+            console.log('기명함수');
+        }
+
+        // 익명함수
+        let fn02 = function(){
+            console.log('익명함수');
+        }
+
+        // 참조함수
+        let obj = {
+            fn03:fn01,
+    
+        }
+        function fn05(){
+            fn01();
+        }
+
+        let fn04 = fn02;
+    </script>
+       
+
+</body>
+</html>

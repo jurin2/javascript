@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 생성자 함수</title>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+
+    <script>
+        let _div = document.getElementsByTagName('div');
+        console.log(typeof _div);
+
+        for(let idx=0; idx<_div.length; idx++){
+            _div[idx].addEventListener('click',function(){
+                this.style.color = '#f00';
+            })
+        }
+
+        // _div[0].addEventListener('click',function(){
+        //     _div[0].style.color = '#f00';
+        // })
+        // _div[1].addEventListener('click',function(){
+        //     _div[1].style.color = '#f00';
+        // })
+        // _div[2].addEventListener('click',function(){
+        //     _div[2].style.color = '#f00';
+        // })
+        // _div[3].addEventListener('click',function(){
+        //     _div[3].style.color = '#f00';
+        // })
+        // _div[4].addEventListener('click',function(){
+        //     _div[4].style.color = '#f00';
+        // })
+
+        // 객체 생성자 함수
+        function CheckBox(name,width,height){
+            this.userName = name;
+            this.boxWidth = width;
+            this.boxHeight = height;
+            this.getInfo = function(){
+                let str='';
+                str += '이름 : ' + this.userName + ',';
+                str += '너비 : ' + this.boxWidth + ',';
+                str += '높이 : ' + this.boxHeight;
+                return str;
+            }          
+        }
+        let hong = new CheckBox('홍길동',100,200);
+        let kim = new CheckBox('김기리',200,200);
+
+
+        let hong2 = {
+            userName = '홍길동',
+            boxWidth = 100,
+            boxHeight = 100,
+            getInfo = function(){
+                this.userName + this.boxWidth + this.boxHeight;
+            }
+        }
+
+    </script>
+</body>
+</html>

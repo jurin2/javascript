@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 64px;
+            color: darkblue;
+            text-align: center;
+        }
+        button{
+            font-size: inherit;
+        }
+        ul,ol,li{
+            list-style: none;
+        }
+        ul a{
+            font-size: 42px;
+            color: darkblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1><a href="./index.html">WEB</a></h1>
+    <button id="btn">NIGHT</button>
+    
+
+    <ul>
+        <li><a href="#" onclick="return false">html</a></li>
+        <li><a href="#" onclick="return false">css</a></li>
+        <li><a href="#" onclick="return false">javascript</a></li>
+    </ul>
+    <hr>
+    <h2>web이란 무엇인가?</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat excepturi ipsum inventore quia, earum, nemo dolorum tenetur non pariatur rem asperiores quisquam vel, eaque repudiandae aperiam omnis consequuntur impedit beatae!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat excepturi ipsum inventore quia, earum, nemo dolorum tenetur non pariatur rem asperiores quisquam vel, eaque repudiandae aperiam omnis consequuntur impedit beatae!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat excepturi ipsum inventore quia, earum, nemo dolorum tenetur non pariatur rem asperiores quisquam vel, eaque repudiandae aperiam omnis consequuntur impedit beatae!</p>
+
+    <script src="user-function.js"></script>
+    <script>
+        let trigger = document.getElementById('btn');
+            trigger.onclick=function(){
+                inText(this);
+            }
+
+        function inText(self){
+            if(self.innerHTML == 'NIGHT'){
+                // 야간화면
+                self.innerHTML = 'DAY';
+                setStyle.bodyBgcolor('#000');
+                setStyle.aTagColor('lightblue');
+                setStyle.buttonColor('2px solid #fff','#000','#fff');
+                setStyle.h2Color('#fff');
+                setStyle.pTagColor('#ccc');
+            }else{
+                // 주간화면
+                self.innerHTML = 'NIGHT';
+                setStyle.bodyBgcolor('#fff');
+                setStyle.aTagColor('darkblue');
+                setStyle.buttonColor('2px outset #767676','#efefef','#000');
+                setStyle.h2Color('#000');
+                setStyle.pTagColor('#000');
+            }
+        }
+
+       
+    </script>
+</body>
+</html>

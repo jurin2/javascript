@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리턴(return)</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,li{
+            list-style: none;
+        }
+        a{
+            color: red;
+            text-decoration: none;
+        }
+        ul{
+            display: flex;
+            justify-content: space-around;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./ex36.html" id="home" onclick="hone();return false;">HOME</a></li>
+            <li><a href="#">PROFILE</a></li>
+            <li><a href="#">PORTFOLIO</a></li>
+            <li><a href="#" id="skills" onclick="skills();return false;">SKILLS</a></li>
+        </ul>
+    </nav>
+
+    <script>
+       function skills(){
+           console.log('마우스클릭');
+       }
+       function home(){
+           console.log('home click');
+       }
+    </script>
+</body>
+</html>

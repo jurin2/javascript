@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수</title>
+</head>
+<body>
+    <script>
+        add(1,2,3,4,5,6,7,8,9);
+
+
+        // 아규먼트
+
+        // 덧셈
+        function add(){
+            return false;
+            let result = 0;
+            for(let idx=0; idx<arguments.length; idx++){
+                result += arguments[idx];
+            }            
+            // console.log('모든수의 합계 = ' + result);
+            return result;
+        }
+        
+        // 뺄셈
+        function sub(){
+            let result = arguments[0];
+            for(let idx=1; idx<arguments.length; idx++){
+                result -= arguments[idx];
+            }
+            // console.log('모든수의 차이 = ' + result);
+            return result;
+        }
+
+        // 곱셈
+        let mul = function(){
+            let result = 1;
+            for(let idx=0; idx<arguments.length; idx++){
+                result *= arguments[idx];
+            }
+            // console.log('모든수의 곱은 = ' + result);
+            return result;
+        }
+
+        // 나누기
+        let div = function(){
+            let result = arguments[0];
+            for(let idx=1; idx<arguments.length; idx++){
+                result /= arguments[idx];
+            }
+            // console.log('모든수의 나누기 = ' + result);
+            return result;
+        }
+
+        let result = sub(10,20);
+
+        console.log(result += (10,10));
+    </script>
+</body>
+</html>
