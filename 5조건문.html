@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>조건문</title>
+</head>
+<body>
+    <h1>조건문</h1>
+    <h2>유사 조건문</h2>
+    <p>switch문</p>
+    <pre>
+        let 변수 = 10;
+        switch(변수){
+            case 1 : {
+                console.log('변수 = 1');
+            }
+        }
+    </pre>
+    <script>
+        let 성별 = prompt('성별이 무엇입니까?(남,여)')
+        switch(성별){
+            case '남' : {
+                console.log('남자입니다');
+                break
+            }
+            case '여' : {
+                console.log('여자입니다');
+                break
+            }
+            default : {
+                console.log('누구입니까?')
+            }
+            
+        }
+    </script>
+</body>
+</html>

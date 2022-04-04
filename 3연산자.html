@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>연산자</title>
+</head>
+<body>
+    <h1>연산자</h1>
+    <h2>산술연산자</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>종류</th>
+                <th>기본형</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>+</td>
+            <td>A+B</td>
+            <td>더하기</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>A-B</td>
+            <td>빼기</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>A*B</td>
+            <td>곱하기</td>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td>A/B</td>
+            <td>나누기</td>
+        </tr>
+        <tr>
+            <td>%</td>
+            <td>A%B</td>
+            <td>나머지</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h2>문자열 결합연산자</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>종류</th>
+                <th>기본형</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>+</td>
+            <td>A+B</td>
+            <td>둘중 한개라도 문자열 결합연산자</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>종류</th>
+                <th>기본형</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>+</td>
+            <td>A+=B</td>
+            <td>A = A + B</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>A-=B</td>
+            <td>A = A - B</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>A*=B</td>
+            <td>A = A * B</td>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td>A/=B</td>
+            <td>A = A / B</td>
+        </tr>
+        <tr>
+            <td>%</td>
+            <td>A%=B</td>
+            <td>A = A % B</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h2>증감연산자</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>종류</th>
+                <th>기본형</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>++</td>
+            <td>++A</td>
+            <td>A = A + 1 or A += 1</td>
+        </tr>
+        <tr>
+            <td>++</td>
+            <td>A++</td>
+            <td>A = A + 1 or A += 1</td>
+        </tr>
+        <tr>
+            <td>--</td>
+            <td>--A</td>
+            <td>A = A - 1 or A -= 1</td>
+        </tr>
+        <tr>
+            <td>--</td>
+            <td>A--</td>
+            <td>A = A - 1 or A -= 1</td>
+        </tr>
+    </table>
+    
+    <script>
+        let a = '5';
+        let b = '살';
+        console.log('a+b=' + (a + b));
+
+        //대입산술연산자
+        let aa = 10;
+        let bb = 5;
+        console.log('aa+=5',aa+=5);
+        console.log('aa+=5',aa);
+
+        //증감연산자(++,--)
+        let aaa = 10;
+        let bbb = 10;
+        console.log('aaa = ' + aaa);
+        console.log('aaa = ' + aaa++);
+        console.log('aaa = ' + aaa);
+
+        console.log('bbb = ' + bbb);
+        console.log('bbb = ' + ++bbb);
+        console.log('bbb = ' + bbb);
+
+        let aaaa = 10;
+        let bbbb = '10';
+        let cccc = (aaaa === bbbb);
+        console.log('aaaa의 타입' + typeof aaaa);
+        console.log('bbbb의 타입' + typeof bbbb);
+        console.log('cccc는 ' + cccc);
+
+    </script>
+</body>
+</html>

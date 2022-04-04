@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>자료형</title>
+</head>
+<body>
+    <script>
+        //문자형
+        let script = 'javascript';
+        let tag = '<h1>javascript</h1>'
+        console.log('문자형' + typeof '문자형');
+        console.log(script + typeof script);
+        console.log(tag + typeof tag);
+
+        //숫자형
+        let age = String(18);
+        let age2 = Number('18');
+        console.log('숫자형' + typeof 18);
+        console.log(age + typeof age);
+        console.log(age2 + typeof age2);
+
+        //불린형
+        let man = Number(true);
+        let girl = Number(false);
+        let man2 = Boolean(20);
+        let man3 = Boolean('20');
+        console.log('불린형' + typeof Number(true));
+        console.log(man + typeof man);
+        console.log(man2 + typeof man2);
+        console.log(girl + typeof girl);
+
+        //null형 "undefined"형
+        let a;//"undefined"형
+        let b = null;
+        let b2 = new Object();
+        let resultB = (b == b2);
+        let c ='';
+        let d = 0;
+        let e = true;
+        console.log('a=' + typeof a);
+        console.log('a=' + typeof b);
+        console.log('a=' + typeof c);
+        console.log('a=' + typeof d);
+        console.log('a=' + typeof e);
+    </script>
+</body>
+</html>
