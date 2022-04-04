@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>배열의 반복 / 복사</title>
+</head>
+<body>
+    <h1>배열의 반복 / 복사</h1>
+    <h2>반복</h2>
+    <h3>for</h3>
+
+    <script>
+        let array1 = [12,4323,2243,563];
+        
+        // for(let cnt=0; cnt<array1.length; cnt++){
+        //     console.log(`array1[${cnt}] = ${array1[cnt]}`);
+        //     if(cnt==2){
+        //         break;
+        //     }
+        // }
+
+        //forEach문
+        console.log(`array1 = ${array1}`);
+        array1.forEach(element=>{
+            console.log(element);
+        });
+
+        array1.map(function(ele,idx,arr){
+            console.log(`array1 = ${arr}의 ${idx}번째 자료는 ${ele}`);
+        });
+
+
+        let array2 = [10,11,12,13,14];
+        array2.forEach(ele=>
+            console.log(ele)
+        );
+
+        array2.forEach((ele,idx,arr)=>{
+            arr[idx]=ele*2;
+        });
+        console.log(`array2=${array2}`);
+    </script>
+</body>
+</html>
