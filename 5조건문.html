@@ -16,22 +16,92 @@
             }
         }
     </pre>
+
+    <h2>조건문</h2>
+    <p>단순 if</p>
+    <pre>
+       if(조건식...){
+           true구역
+       }
+    </pre>
+
+    <h2>조건문</h2>
+    <p>다중 if else</p>
+    <pre>
+       if(조건식...){
+           true1
+       }else if(조건){
+           true2
+       }else{
+           false
+       }
+    </pre>
+
+
+
     <script>
-        let 성별 = prompt('성별이 무엇입니까?(남,여)')
-        switch(성별){
-            case '남' : {
-                console.log('남자입니다');
-                break
-            }
-            case '여' : {
-                console.log('여자입니다');
-                break
-            }
-            default : {
-                console.log('누구입니까?')
-            }
+        //switch문
+        // let 성별 = prompt('성별이 무엇입니까?(남,여)')
+        // switch(성별){
+        //     case '남' : {
+        //         console.log('남자입니다');
+        //         break
+        //     }
+        //     case '여' : {
+        //         console.log('여자입니다');
+        //         break
+        //     }
+        //     default : {
+        //         console.log('누구입니까?')
+        //     }
             
+        // }
+   
+        //단순if문
+        // let a = 10;
+        // let b = '10';
+        // let c = null;
+        // let d;
+        // if(a==b){
+        //     console.log('a와 b는 값이 일치합니다.');
+        // }
+        // if(a==b && a!==b){
+        //     console.log('a와 b는 데이터 형식이 불일치합니다.');      
+        // }
+        // if(c){
+        //     console.log('c는 true로 인식됩니다.');      
+        // }
+   
+        //if else
+        // let 조건1 = 10;
+        // if(조건1 === 1){
+        //     console.log('true');
+        // }else{
+        //     console.log('false');
+        // }
+
+        // if(조건1>100 || 조건1<100){
+        //     console.log('true');
+        // }else{
+        //     console.log('false');
+        // }
+
+        //다중 if
+        let 성적 = prompt('당신의 국어 점수는?(100점 만점)');
+        let 평가 = null;
+        if(성적>=0 && 성적<=59){
+            평가='가';
+        }else if(성적>=60 && 성적<=69){
+            평가='양';
+        }else if(성적>=70 && 성적<=79){
+            평가='미';
+        }else if(성적>=80 && 성적<=89){
+            평가='우';
+        }else{
+            평가='수';
         }
-    </script>
+
+        console.log(`당신의 성적은 ${성적}, ${평가}입니다.`);
+   </script>
 </body>
 </html>
