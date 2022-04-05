@@ -19,12 +19,13 @@
         //     }
         // }
 
-        //forEach문
+        //forEach문 - return 안됨
         console.log(`array1 = ${array1}`);
         array1.forEach(element=>{
             console.log(element);
         });
 
+        //map - return 됨
         array1.map(function(ele,idx,arr){
             console.log(`array1 = ${arr}의 ${idx}번째 자료는 ${ele}`);
         });
@@ -39,6 +40,30 @@
             arr[idx]=ele*2;
         });
         console.log(`array2=${array2}`);
+
+        
+
+        let array3 = [1,2,3,4,5];
+
+        //forEach문 - return 안됨
+        let newArray = array3.forEach((값,인덱스,배열)=>{
+            // console.log(`array3[${인덱스}]=${값}`);
+            return 값;
+        });
+        console.log(newArray);
+
+        //map - return 됨
+        let newArray2 = array3.map((값,인덱스,배열)=>{
+            // console.log(`배열[${인덱스}]=${값}`);
+            return 값;
+        });
+        console.log(newArray2);
+
+        //for of
+        let arr = ['오렌지','사과','배','참외','수박'];
+        for(let item of arr){ //for(아이템 of 배열)
+            console.log(`arr[${idx++}] = ${item}`);
+        }
     </script>
 </body>
 </html>

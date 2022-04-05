@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>브라우저 개체 모델(BOM)</title>
+</head>
+<body>
+    <h1>BOM</h1>
+    <button onclick="cTime()">멈춤</button>
+    <button onclick="window.close()">창닫기</button>
+    <h2>window 개체</h2>
+
+    <script>
+        //window Object(모든 개체의 부모)
+        // window.open('http://www.naver.com');
+        // window.alert('http://www.naver.com');
+        // let msg = window.prompt('http://www.naver.com');
+        // let cof = window.confirm('http://www.naver.com');
+        // if(cof){
+        //     window.open(msg);
+        // }
+
+        // let cnt = 0;
+        // let sInt = window.setInterval(()=>{
+        //     console.log(cnt++);
+        //     if(cnt>=10){
+        //         clearInterval(sInt);
+        //     }
+        // },1000);
+        // let sTime = window.setTimeout(()=>{
+        //     document.querySelector('h1').innerHTML='하이';
+        // },10000);
+
+        // function cTime(){
+        //     clearTimeout(sTime);
+        // }
+
+        //screen Object (모니터 정보)
+        let scrWidth = screen.width;//모니터(화면)
+        let scrHeight = screen.height;//모니터(화면)
+        let scrDwidth = screen.availWidth;//모니터의 바탕화면
+        let scrDheight = screen.availHeight;//모니터의 바탕화면
+        console.log(`모니터 너비=${scrWidth}px, 모니터 높이=${scrHeight}px`);
+        console.log(`작업표시줄 높이=${scrHeight-scrDheight}px`);
+      
+    </script>
+</body>
+</html>

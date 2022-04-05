@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>함수(Function)</title>
+</head>
+<body>
+    <h1>Function(함수)</h1>
+
+
+    <script src="./함수모음.js"></script>
+    <script>
+        함수명();//함수 호출
+
+        //함수의 정의
+        function 함수명(){
+            for(let i=1; i<=10; i++){
+                console.log(`i=${i}`)
+            }
+        }
+
+        let 함수명2 = function(){
+            for(let i=1; i<=10; i++){
+                console.log(`i=${i}`)
+            }
+        }
+
+        function 기명함수(fucntion(){
+            콜백함수;
+        })
+
+
+
+
+        //함수 파라미터
+        function 함수(파라미터1,파라미터2,파라미터3){
+            console.log(`순번: ${파라미터1}, 성명: ${파라미터2}, 나이: ${파라미터3}`);
+        }
+        함수(1,'홍길동',22);
+    
+        function 함수2(para1,para2){
+            console.log(para1,para2);
+        }
+        함수2();
+
+        function 함수3(para1,para2){
+            console.log(para1,para2);
+        }
+        함수3(1,2,3,4,5,6,7,8,9,10);
+
+        //arguments
+        function myFunction(){
+            let arg = [...arguments];
+                console.log(arguments, arg);
+        }
+        myFunction(1,2,3,4,5,6,7,8,9,10);
+
+        //return = 함수종료
+        function fn함수1(){
+            return '1234';
+            console.log('qwedasd');
+        }
+        console.log(fn함수1());
+
+        function 덧셈계산기(){
+            let rs = arguments[0] + arguments[1];
+            return rs;
+        }
+        console.log(덧셈계산기(1,2));
+
+        function fn함수2(){
+            let arr = [1,2,3,4,5];
+            return function(){
+                console.log(1)
+            };
+        }
+        let arr2 = fn함수2();
+        console.log(arr2);
+    </script>
+    
+</body>
+</html>
