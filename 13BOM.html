@@ -6,8 +6,8 @@
 </head>
 <body>
     <h1>BOM</h1>
-    <button onclick="cTime()">멈춤</button>
-    <button onclick="window.close()">창닫기</button>
+    <!-- <button onclick="cTime()">멈춤</button>
+    <button onclick="window.close()">창닫기</button> -->
     <h2>window 개체</h2>
 
     <script>
@@ -42,6 +42,28 @@
         let scrDheight = screen.availHeight;//모니터의 바탕화면
         console.log(`모니터 너비=${scrWidth}px, 모니터 높이=${scrHeight}px`);
         console.log(`작업표시줄 높이=${scrHeight-scrDheight}px`);
+
+        //location Object
+        // location.href = 'https://www.naver.com';
+        let hostAddress = location.hostname;//도메인
+        console.log(hostAddress);
+        let hostPath = location.pathname;//경로 파일명
+        console.log(hostPath);
+        let hostPro = location.protocol;//접속 프로토콜
+        console.log(hostPro);
+
+        //history Object(현재창 방문기록)
+        //history.back();//바로 전 주소 이동
+        //history.forward();// 백하기 전 주소로 이동
+        //history.go(number);//number 백,포워드
+        
+        //navigator Object(브라우저 정보)
+        let 브라우저이름 = navigator.appName;
+        console.log(브라우저이름);
+        let 브라우저코드 = navigator.appCodeName;
+        console.log(브라우저코드);
+        let 브라우저버전 = navigator.appVersion;
+        console.log(브라우저버전);
       
     </script>
 </body>
