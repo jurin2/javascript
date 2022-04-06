@@ -1,101 +1,151 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>배열조작</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열조작</title>
 </head>
 <body>
     <h1>배열조작</h1>
-    <h2>배열합치기(join,concat)</h2>
+    <h2>배열합치기(concat)</h2>
     <pre>
-        let str = '대한' + '민국';
-        console.log(str); 대한민국
-        let first = '대한';
-        let last = '민국';
-        let full = first + last;
-    </pre>
-
-    <h2>배열나누기(slice)</h2>
-
-    <script>
-        let str = '대한' + '민국';
-        console.log(str);
-
-        let first = '대한';
-        let last = '민국';
-        let full = first + last;
-        console.log(full);
+        let str = '대한'.concat('민국');
+        console.log(str);// 대한민국
         
+        let first = '대한';
+        let last = '민국';
+        let full = first.concat(last);
+        console.log(full);// 대한민국
+
         let arr1 = [1,2,3];
         let arr2 = [4,5,6];
         let addArr = arr1.concat(arr2);
-        console.log(addArr);
-        addArr.forEach((ele,idx)=>{
-            console.log(`addArr[${idx}]=${ele}`);
-        })
+        console.log(`addArr = ${addArr}`);//[1,2,3,4,5,6]
+    </pre>
 
-        let lang = ['html','css','js'];
-        let result = lang.join();
-        console.log(`result는 자료형이 ${typeof result}이고 값은 ${result}이다`);
-        // result.forEach((ele,idx,arr)=>{
-        //     console.log(`result[${idx}] = ${ele}`);
-        // })
+    <h2>배열나누기(slice)</h2>
+    <pre>
+        const arr3 = ['오렌지','사과','배','참외','수박'];
+        const arr4 = arr3.slice(1,3);//slice(시작인덱스,끝인덱스+1);
+        console.log(arr4);
+        const arr5 = arr3.slice(-3,-1);
+        console.log(arr5);
+    </pre>
+
+    <h2>위치 찾기(indexOf)</h2>
+    <pre>
+        let arr6 = ['오렌지','사과','배','참외','수박'];
+        let idxNum = arr6.indexOf('배');
+        console.log(`배의 위치는 arr6에서 ${idxNum}번째 입니다.`);
+
+        let subArr1 = arr6.slice(0,arr6.indexOf('배'));
+        let subArr2 = arr6.slice(arr6.indexOf('배'),arr6.length);
+        console.log(`subArr1 = ${subArr1}`);
+        console.log(`subArr2 = ${subArr2}`);
+    </pre>
+
+    <h2>정렬(오름차순,역순정렬)</h2>
+    <pre>
+        오름차순정렬
+        let arr7 = ['오렌지','사과','배','참외','수박'];
+        arr7.sort();
+        console.log(`arr7을 오름차순 정렬하니 "${arr7}"가 되었다`);
+        역순정렬
+        arr7.reverse();
+        console.log(`arr7을 내림차순 정렬하니 "${arr7}"가 되었다`);
+    </pre>
+
+    <h2>배열(개체) 복사</h2>
+    <pre>
+        let arr8 = ['오렌지','사과','배','참외','수박'];
+        let arr9 = arr8;//copy X, 참조복사
+        console.log(`arr8=${arr8},arr9=${arr9}`);
+        arr9[0]='앵두';
+        console.log(`arr8=${arr8},arr9=${arr9}`);
+
+        let arr10 = ['오렌지','사과','배','참외','수박'];
+        let arr11 = [...arr10];//스프레드(spread)연산자
+        console.log(`arr10=${arr10},arr11=${arr11}`);
+        arr11[0]='앵두';
+        console.log(`arr10=${arr10},arr11=${arr11}`);
+    </pre>
+
+    <script>
+        //배열 합치기(concat)
+        let str = '대한'.concat('민국');
+        console.log(str);// 대한민국
+        
+        let first = '대한';
+        let last = '민국';
+        let full = first.concat(last);
+        console.log(full);// 대한민국
+
+        let arr1 = [1,2,3];
+        let arr2 = [4,5,6];
+        let addArr = arr1.concat(arr2);
+        console.log(`addArr = ${addArr}`);//[1,2,3,4,5,6]
 
         //배열 나누기(slice)
+
         const arr3 = ['오렌지','사과','배','참외','수박'];
-        const arr4 = arr3.slice(1,3); //slice(시작인덱스,끝인덱스+1);
+        const arr4 = arr3.slice(1,3);//slice(시작인덱스,끝인덱스+1);
         console.log(arr4);
         const arr5 = arr3.slice(-3,-1);
         console.log(arr5);
 
-        //위치찾기
+        //위치 찾기
         let arr6 = ['오렌지','사과','배','참외','수박'];
         let idxNum = arr6.indexOf('배');
-        console.log(idxNum);
+        console.log(`배의 위치는 arr6에서 ${idxNum}번째 입니다.`);
 
         let subArr1 = arr6.slice(0,arr6.indexOf('배'));
         let subArr2 = arr6.slice(arr6.indexOf('배'),arr6.length);
-        console.log(subArr1);
-        console.log(subArr2);
+        console.log(`subArr1 = ${subArr1}`);
+        console.log(`subArr2 = ${subArr2}`);
 
-        //sort() 오름차순 & reverse() 역순정렬
-        console.log(`sort()는 오름차순 ${arr6.sort()}`)
-        console.log(`reverse()는 역순정렬 ${arr6.reverse()}`)
+        //정렬(오름차순,역순정렬)
+        //오름차순정렬
+        let arr7 = ['오렌지','사과','배','참외','수박'];
+        arr7.sort();
+        console.log(`arr7을 오름차순 정렬하니 "${arr7}"가 되었다`);
+        //역순정렬
+        arr7.reverse();
+        console.log(`arr7을 내림차순 정렬하니 "${arr7}"가 되었다`);
+
 
         //배열의 복사
         let a = '대한민국';
-        let b = a;
+        let b = a;//copy
         console.log(`a=${a},b=${b}`);
-
         b=b.concat(' 만세');
         console.log(`a=${a},b=${b}`);
 
-        let arr7 = ['오렌지','사과','배','참외','수박'];
-        let arr8 = arr7;//copy X
-        console.log(`arr7=${arr7},arr8=${arr8}`);
-        arr8[0]='앵두';
-        console.log(`arr7=${arr7},arr8=${arr8}`);
+        let arr8 = ['오렌지','사과','배','참외','수박'];
+        let arr9 = arr8;//copy X, 참조복사
+        console.log(`arr8=${arr8},arr9=${arr9}`);
+        arr9[0]='앵두';
+        console.log(`arr8=${arr8},arr9=${arr9}`);
 
         let arr10 = ['오렌지','사과','배','참외','수박'];
-        let arr11 = [arr10];//스프레드 연산자
+        let arr11 = [...arr10];//스프레드(spread)연산자를 이용한 카피
         console.log(`arr10=${arr10},arr11=${arr11}`);
         arr11[0]='앵두';
         console.log(`arr10=${arr10},arr11=${arr11}`);
 
         let arr12 = ['오렌지','사과','배','참외','수박'];
-        let arr13 = arr12.slice(0,arr12.length);
+        let arr13 = arr12.slice(0,arr12.length);//카피
         console.log(`arr12=${arr12},arr13=${arr13}`);
         arr13[0]='앵두';
         console.log(`arr12=${arr12},arr13=${arr13}`);
 
         let arr14 = ['오렌지','사과','배','참외','수박'];
-        let arr15 = arr14.map(item=>{
+        let arr15 = arr14.map(function(item){
             return item;
         });
         console.log(`arr14=${arr14},arr15=${arr15}`);
         arr15[0]='앵두';
         console.log(`arr14=${arr14},arr15=${arr15}`);
-
     </script>
 </body>
 </html>

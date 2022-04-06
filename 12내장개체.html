@@ -1,24 +1,123 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>개체(Object)</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장개체</title>
 </head>
 <body>
     <h1>내장개체</h1>
     <h2>날짜/시간</h2>
+    <pre>
+        //날짜개체
+        let today = new Date();
+        console.log(today);
+        console.log(`올해면도=${today.getFullYear()}`);
+        console.log(`이번달은=${today.getMonth()+1}`);
+        console.log(`오늘은=${today.getDate()}`);
+        console.log(`현재 시는=${today.getHours()}`);
 
+        today.setFullYear('2023');
+        today.setHours('10');        
+        console.log(today);
+
+        let today1 = new Date('2020','3','6','15','52','00');
+        console.log(today1);
+
+        let diffDate = today.getTime();//1970-01-01 경과 밀리초
+        diffDate = diffDate/1000/60/60/24;
+        console.log(diffDate);
+    </pre>
+
+    <h2>수학</h2>
+    <pre>
+        //수학개체
+        let pi = Math.PI;
+        let r = 5;
+        let width = Math.pow(r,2)*pi;
+        console.log(width);
+        console.log(Math.abs(-5));//절대값
+        console.log(Math.max(-5,4,67,12,98));//최대값
+        console.log(Math.min(-5,4,67,12,98));//최소값
+        console.log(Math.round(256.4289,2));//반올림
+        console.log(Math.ceil(256.4289));//올림
+        console.log(Math.floor(256.4289));//내림
+        console.log(Math.sqrt(4));//루트
+        console.log(Math.pow(4,3));//제곱값
+        console.log(Math.random());//랜덤값
+        console.log(Math.PI);//원주율값
+    </pre>
+
+    <h2>문자열개체</h2>
+    <pre>
+        //문자열개체
+        let 문자열1 = new String()
+        문자열1='대한민국만세';
+        let 문자열2 = '대만민국만세';
+    </pre>
+
+    <h2>배열개체</h2>
+    <pre>
+        //배열개체
+        let 배열1 = new Array();
+        배열1[0]='대';
+        배열1[1]='한';
+        배열1[2]='민';
+        배열1[3]='국';
+        배열1[4]='만';
+        배열1[5]='세';
+    </pre>
+
+    <h2>사용자정의 개체</h2>
+    <pre>
+        let 개체1 = new Object();
+            개체1={
+               번호:1,
+               이름:'홍길동',
+               나이:24,
+               지역:'서울',
+               함수:function(par1){
+                   alert(par1);
+               }
+            }
+        let 개체2 = {
+            번호:2,
+            이름:'이몽룡',
+            나이:18,
+            지역:'남원'
+        }
+
+        console.log(개체2.이름);
+        개체1.함수('이것이 메서드요');
+
+        // let 개체3={
+        //     [1,2,3,4,5,6,7,8,9,10],
+        //     [1,2,3,4,5,6,7,8,9,10],
+        //     [1,2,3,4,5,6,7,8,9,10]
+        // }
+        let 배열=[
+            {number:1,name:'홍길동',age:24},
+            {number:2,name:'이몽룡',age:18},
+            {number:3,name:'성춘향',age:16}
+        ];
+        
+        배열.forEach((ele,idx,arr)=>{
+            console.log(`배열[${idx}]=${arr[idx].number},${arr[idx].name},${arr[idx].age}`);
+        })
+
+    </pre>
     <script>
         //날짜개체
         let today = new Date();
         console.log(today);
-        console.log(`올해년도=${today.getFullYear()}`);
+        console.log(`올해면도=${today.getFullYear()}`);
         console.log(`이번달은=${today.getMonth()+1}`);
         console.log(`오늘은=${today.getDate()}`);
-        console.log(`현재시간은=${today.getHours()}`);
+        console.log(`현재 시는=${today.getHours()}`);
 
         today.setFullYear('2023');
-        today.setHours('10');
+        today.setHours('10');        
         console.log(today);
 
         let today1 = new Date('2020','3','6','15','52','00');
@@ -28,10 +127,10 @@
         diffDate = diffDate/1000/60/60/24;
         console.log(diffDate);
 
+
         //수학개체
         let pi = Math.PI;
         let r = 5;
-        // let width = 5*5*pi;
         let width = Math.pow(r,2)*pi;
         console.log(width);
         console.log(Math.abs(-5));//절대값
@@ -46,31 +145,30 @@
         console.log(Math.PI);//원주율값
 
         //문자열개체
-        let 문자열1 = new String();
-            문자열1 = '대한민국만세';
-        let 문자열2 = '대한민국만세';
+        let 문자열1 = new String()
+        문자열1='대한민국만세';
+        let 문자열2 = '대만민국만세';
 
         //배열개체
         let 배열1 = new Array();
-            배열1[0] = '대';
-            배열1[1] = '한';
-            배열1[2] = '민';
-            배열1[3] = '국';
-            배열1[4] = '만';
-            배열1[5] = '세';
+        배열1[0]='대';
+        배열1[1]='한';
+        배열1[2]='민';
+        배열1[3]='국';
+        배열1[4]='만';
+        배열1[5]='세';
 
         let 배열2 = ['대','한','민','국','만','세'];
-
-        //오리지얼 개체
+        //오리지널 개체
         let 개체1 = new Object();
-            개체1 = {
-                번호:1,
-                이름:'홍길동',
-                나이:24,
-                지역:'서울',
-                함수:function(par1){
-                    alert(par1)
-                }
+            개체1={
+               번호:1,
+               이름:'홍길동',
+               나이:24,
+               지역:'서울',
+               함수:function(par1){
+                   alert(par1);
+               }
             }
         let 개체2 = {
             번호:2,
@@ -78,9 +176,9 @@
             나이:18,
             지역:'남원'
         }
-        console.log(Math.pow(5,3));
+
         console.log(개체2.이름);
-        개체1.함수('이것이 메서드');        
+        개체1.함수('이것이 메서드요');
 
         // let 개체3={
         //     [1,2,3,4,5,6,7,8,9,10],
@@ -88,27 +186,14 @@
         //     [1,2,3,4,5,6,7,8,9,10]
         // }
         let 배열=[
-            {
-                number:1,
-                name:'강호동',
-                age:24
-            },
-            {
-                number:2,
-                name:'성춘향',
-                age:18
-            },
-            {
-                number:3,
-                name:'강감찬',
-                age:16
-            }
-        ]
+            {number:1,name:'홍길동',age:24},
+            {number:2,name:'이몽룡',age:18},
+            {number:3,name:'성춘향',age:16}
+        ];
         
         배열.forEach((ele,idx,arr)=>{
             console.log(`배열[${idx}]=${arr[idx].number},${arr[idx].name},${arr[idx].age}`);
         })
-
     </script>
 </body>
 </html>

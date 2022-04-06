@@ -1,30 +1,62 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>배열</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
 </head>
 <body>
     <h1>배열(Array)</h1>
     <pre>
-        let 배열1 = []; //선언
-        let 배열2 = [1,2,3]; //선언,초기화
-        let 배열3 = ['1',2,null]; //선언,초기화
-        let 배열4 = new Array(); //선언
-        let 배열5 = '안녕하세요'; //초기화
+        let 배열1 = [];
+        let 배열2 = [1,2,3];
+        let 배열3 = ['1',2,null];
+        let 배열4 = new Array();
+        let 배열5 = '안녕하세요';
     </pre>
 
     <script>
-        let 배열1 = []; //선언
-        let 배열2 = [1,2,3]; //선언,초기화
-        let 배열3 = ['1',2,null]; //선언,초기화
-        let 배열4 = new Array(); //선언
-        let 배열5 = '안녕하세요'; //초기화
-
-        for(let idx=0; idx<배열2.length; idx++){
-            console.log(`배열2[${idx}]=${배열2[idx]}`);
+        let 배열1 = [];//선언
+        let 배열2 = [1,2,3]; //선업,초기화
+        let 배열3 = ['1',2,null];//선언,초기화
+        let 배열4 = new Array();//선언
+        let 배열5 = '안녕하세요';//초기화
+        
+        for(let idx=0;idx<배열1.length;idx++){
+            console.log(`배열1[${idx}] = ${배열1[idx]}`);
         }
+        for(let idx=0;idx<배열2.length;idx++){
+            console.log(`배열2[${idx}] = ${배열2[idx]}`);
+        }
+        for(let idx=0;idx<배열3.length;idx++){
+            console.log(`배열3[${idx}] = ${배열3[idx]}`);
+        }
+        for(let idx=0;idx<배열4.length;idx++){
+            console.log(`배열4[${idx}] = ${배열4[idx]}`);
+        }
+        for(let idx=0;idx<배열5.length;idx++){
+            console.log(`배열5[${idx}] = ${배열5[idx]}`);
+        }
+        
+        배열1.push(1,4,5,3,56);
+        배열4.unshift(1,4,5,3,56);
+        console.log(배열1);
+        console.log(배열4);
+        배열1.pop();
+        배열4.shift();
+        console.log(배열1);
+        console.log(배열4);
+        console.log('===============');
+        console.log(`배열1 = ${배열1}`);
+        console.log(`배열2 = ${배열2}`);
+        console.log(`배열3 = ${배열3}`);
+        console.log(`배열4 = ${배열4}`);
+        console.log(`배열5 = ${배열5}`);
 
+        let delIdx = 배열1.indexOf(5);
+        배열1.splice(delIdx,1);
+        console.log(`배열1 = ${배열1}`);
 
     </script>
 </body>

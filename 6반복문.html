@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>반복문</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
 </head>
 <body>
-
     <h1>반복문</h1>
     <h2>while</h2>
     <pre>
-       while(조건식){
-           반복구역
-       }
+        while(조건){
+            반복구역
+        }
     </pre>
 
     <h2>do while</h2>
     <pre>
-       do{
-           반복구역
-       }while(조건)
+        do{
+            반복구역
+        }while(조건)
+    </pre>
+
+    <h2>for</h2>
+    <pre>
+        for(초기값;조건식;증감식){
+            반복구역
+        }
     </pre>
 
     <h2>중첩 for</h2>
     <pre>
-      for(초기값;조건식;증감식){
         for(초기값;조건식;증감식){
-            반복구역(for * for)
+            for(초기값;조건식;증감식){
+                반복구역(for * for)
+            }
         }
-      }
     </pre>
-
 
     <script>
         //반복문(조건,탈출,탈출조건)
@@ -38,27 +45,34 @@
             console.log(cnt++);
         }
 
-        let idx = 1;
+        let idx=1;
         while(idx){
             console.log(idx++);
-            if(idx>=5){
+            if(idx >=5){
                 break;
             }
         }
 
+        //do while
         let i = 5;
         do{
             console.log(`i=${i++}`);
         }while(i<5)
 
-        for(let cnt=1; cnt<=9; cnt++){
+
+        //for문
+        // let cnt = 1; 초기값
+        // while(cnt<5){ 조건식
+        //    console.log(cnt++); 증감식
+        // }
+        for(let cnt = 1;cnt<=9;cnt++){
             console.log(`5*${cnt}=${5*cnt}`);
         }
 
         //중첩for
-        for(let k=0; k<10; k++){
-            console.log(`----------${k}단---------`);
-            for(let j=2; j<10; j++){
+        for(let k=2;k<10;k++){
+            console.log(`==============${k}단=================`);
+            for(let j=2;j<10;j++){
                 console.log(`${k}*${j}=${k*j}`);
             }
         }

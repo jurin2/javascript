@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>자료형</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료형</title>
 </head>
 <body>
     <script>
         //문자형
-        let script = 'javascript';
-        let tag = '<h1>javascript</h1>'
+        let script='javaScript';
+        let tag = '<h1>javaScript</h1>';
         console.log('문자형' + typeof '문자형');
         console.log(script + typeof script);
         console.log(tag + typeof tag);
@@ -21,28 +23,38 @@
         console.log(age2 + typeof age2);
 
         //불린형
-        let man = Number(true);
-        let girl = Number(false);
+        let man = Number(true);        
         let man2 = Boolean(20);
         let man3 = Boolean('20');
+        let girl = Number(false);
+        let girl2 = Boolean(0);
+        let girl3 = Boolean(null);
+        let result = (true == Boolean('0'));
         console.log('불린형' + typeof Number(true));
         console.log(man + typeof man);
         console.log(man2 + typeof man2);
+        console.log(man3 + typeof man3);
         console.log(girl + typeof girl);
+        console.log(girl2 + typeof girl2);
+        console.log(girl3 + typeof girl3);
+        console.log('result = ' + result + ', result의 자료형 = ' + typeof result);
 
-        //null형 "undefined"형
+        //"null"과 "undefined"형
         let a;//"undefined"형
-        let b = null;//object형 <=> null형
-        let b2 = new Object();
-        let resultB = (b == b2);
-        let c ='';
-        let d = 0;
-        let e = true;
-        console.log('a=' + typeof a);
-        console.log('a=' + typeof b);
-        console.log('a=' + typeof c);
-        console.log('a=' + typeof d);
-        console.log('a=' + typeof e);
+        let b=null;//"object"형 <=> null형
+        let b2=new Object();
+        let resultB = (typeof b == typeof b2);
+        let c='';
+        let d=0;
+        let e=true;
+        console.log('a='+typeof a);
+        console.log('b='+typeof b);
+        console.log('b2='+typeof b2);
+        console.log('resultB=' + resultB);
+        console.log('c='+typeof c);
+        console.log('d='+typeof d);
+        console.log('e='+typeof e);
+
     </script>
 </body>
 </html>

@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>상수</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상수란!?</title>
 </head>
 <body>
     <h1>상수</h1>
-    <p>한번 정의하면 변경할 수 없는 수</p> 
+    <p>한번 정의되면 변경할 수 없는 수</p>
+
+
     <script>
-        let a = 10;//변수
-        const b = 10;//상수
+        let a = 10; //변수
+        const b = 10; //상수
         const c = ['수','우','미','양','가'];
 
         let 성적 = 60;
+     
+        c[3] = '수';
         if(성적>=90){
             console.log(c[0]);
         }else if(성적>=80){
@@ -24,6 +30,7 @@
         }else{
             console.log(c[4]);
         }
+
     </script>
-</body>
+</body>    
 </html>

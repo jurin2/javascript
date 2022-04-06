@@ -1,93 +1,139 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>조건문</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
 </head>
 <body>
     <h1>조건문</h1>
     <h2>유사 조건문</h2>
-    <p>switch문</p>
+    <h3>switch문</h3>
     <pre>
-        let 변수 = 10;
-        switch(변수){
-            case 1 : {
-                console.log('변수 = 1');
+        let 성별 = '남';
+        switch(성별){
+            case '남' : {
+                console.log('남자입니다.');
+                break;
             }
+            case '여':{
+                console.log('여자입니다.');
+                break;
+            }
+            default : {
+                console.log('당신은 누구입니까?');
+            }
+        }
+    
+
+
+    </pre>
+
+    <h2>조건문</h2>
+    <h3>단순 if</h3>
+    <pre>
+        if(조건식...){
+            true구역
+        }
+
+    </pre>
+
+    <h3>if else</h3>
+    <pre>
+        if(조건식...){
+            true구역
+        }else{
+            false구역
         }
     </pre>
 
-    <h2>조건문</h2>
-    <p>단순 if</p>
+    <h3>다중 if else</h3>
     <pre>
-       if(조건식...){
-           true구역
-       }
+        if(조건식...){
+            true1
+        }else if(조건){
+            true2
+        }else{
+            false
+        }
+
+
     </pre>
 
-    <h2>조건문</h2>
-    <p>다중 if else</p>
+    <h3>중첩 if</h3>
     <pre>
-       if(조건식...){
-           true1
-       }else if(조건){
-           true2
-       }else{
-           false
-       }
+        if(조건1){
+            if(조건2){
+                조건1 true && 조건2 true 영역
+            }else{
+                조건1 true && 조건2 false 영역
+            }
+        }else{
+            if(조건3){
+                조건1 false && 조건3 true 영역
+            }else{
+                조건1 false && 조건3 false 영역
+            }
+        }            
     </pre>
-
-
-
     <script>
-        //switch문
-        // let 성별 = prompt('성별이 무엇입니까?(남,여)')
-        // switch(성별){
-        //     case '남' : {
-        //         console.log('남자입니다');
-        //         break
-        //     }
-        //     case '여' : {
-        //         console.log('여자입니다');
-        //         break
-        //     }
-        //     default : {
-        //         console.log('누구입니까?')
-        //     }
-            
-        // }
-   
-        //단순if문
-        // let a = 10;
-        // let b = '10';
-        // let c = null;
-        // let d;
-        // if(a==b){
-        //     console.log('a와 b는 값이 일치합니다.');
-        // }
-        // if(a==b && a!==b){
-        //     console.log('a와 b는 데이터 형식이 불일치합니다.');      
-        // }
-        // if(c){
-        //     console.log('c는 true로 인식됩니다.');      
-        // }
-   
+        //switch
+        let 성별 = '남';
+        switch(성별){
+            case '남' : {
+                console.log('남자입니다.');
+                break;
+            }
+            case '여':{
+                console.log('여자입니다.');
+                break;
+            }
+            default : {
+                console.log('당신은 누구입니까?');
+                break;
+            }
+        }
+
+
+        //단순if
+        let a=10;
+        let b='10';
+        let c= null;
+        let d; 
+        if(a==b){
+            console.log('a와 b는 값이 일치합니다.');
+        }
+        if(a==b && a!==b){
+            console.log('a와 b는 데이터 형식이 불일치합니다.');
+        }
+        if(c==null){
+            console.log('null은 false로 인식됩니다.')
+        }
+        if(d==undefined){
+            console.log('undefined은 true아니고 false도 아닌것으로 인식됩니다.')
+        }
+        if(!0){
+            console.log('0는 false로 인식됩니다.')
+        }
+        if(b){
+            console.log('String는 true로 인식됩니다.')
+        }
+
         //if else
-        // let 조건1 = 10;
-        // if(조건1 === 1){
-        //     console.log('true');
-        // }else{
-        //     console.log('false');
-        // }
-
-        // if(조건1>100 || 조건1<100){
-        //     console.log('true');
-        // }else{
-        //     console.log('false');
-        // }
-
+        let 조건1 = '10';
+        if(조건1 === 0){
+            console.log('true');
+        }else{
+            console.log('false');
+        }
+        if(조건1>=100 || 조건1 <100){
+            console.log('true');
+        }else{
+            console.log('false');
+        }
         //다중 if
-        let 성적 = prompt('당신의 국어 점수는?(100점 만점)');
+        let 성적 = 59;
         let 평가 = null;
         if(성적>=0 && 성적<=59){
             평가='가';
@@ -101,7 +147,36 @@
             평가='수';
         }
 
-        console.log(`당신의 성적은 ${성적}, ${평가}입니다.`);
-   </script>
+        console.log(`당신의 성적은 ${성적}점이며\n평가는 ${평가}입니다.`);
+
+        //중첩if
+        let gender = 'm';
+        let s = 'y';
+        let age = 40;
+        if(gender=='m'){
+            if(s=='y'){
+                console.log('아저씨');
+            }else{
+                console.log('학생');
+            }
+        }else{
+            if(age>=40){
+                console.log('아줌마');
+            }else{
+                console.log('아가씨');
+            }
+        }
+        //다중
+        if(gender == 'm' && s == 'y'){
+            console.log('아저씨');
+        }else if(gender == 'm' && s != 'y'){
+            console.log('학생');
+        }else if(gender != 'm' && age >=40){
+            console.log('아줌마');
+        }else if(gender != 'm' && age < 40){
+            console.log('아가씨');
+        }
+
+    </script>
 </body>
 </html>

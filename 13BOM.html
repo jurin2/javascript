@@ -1,70 +1,154 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>브라우저 개체 모델(BOM)</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 개체 모델(BOM)</title>
 </head>
 <body>
     <h1>BOM</h1>
-    <!-- <button onclick="cTime()">멈춤</button>
-    <button onclick="window.close()">창닫기</button> -->
+    <button onclick="cTime();">멈춤</button>
+    <button onclick="window.close();">창닫기</button>
     <h2>window 개체</h2>
+    <pre>
+        //window Object(모든 개체의 부모)
+        
+        let msg = window.prompt('이동할 주소를 넣어주세요');
+        let cof = window.confirm(`정말로 ${msg}로 이동할까요?`);
+        if(cof){
+            window.open(msg);                
+        }
+        let cnt = 0;
+        
+        let sInt = window.setInterval(()=>{
+            console.log(cnt++);
+            if(cnt>=10){
+                clearInterval(sInt);
+            }
+        },1000);
 
+        
+        let sTime = window.setTimeout(()=>{            
+            document.querySelector('h1').innerHTML='하이';            
+        },10000);
+
+
+        function cTime(){
+            clearTimeout(sTime);
+        }
+    </pre>
+    <h2>screen Object</h2>
+    <pre>
+        //screen Object(모니터 정보)
+        let scrWidth=screen.width;//모니터(화면)
+        let scrHeight=screen.height;//모니터(화면)
+        let scrDwidth=screen.availWidth//모니터의 바탕화면
+        let scrDheight=screen.availHeight//모니터의 바탕화면
+        console.log(`모니터 너비=${scrWidth}px,모니터 높이=${scrHeight}px`);
+        console.log(`작업표시줄 높이=${scrHeight-scrDheight}px`);
+    </pre>
+
+    <h2>location Object</h2>
+    <pre>
+        //location Object(주소)
+        // location.href='https://www.naver.com';
+        let hostDomain = location.hostname;//도메인(domain)
+        console.log(hostDomain);
+        let hostPath = location.pathname;//경로 파일명
+        console.log(hostPath);
+        let hostPro = location.protocol;//접속 프로토콜
+        console.log(hostPro);
+    </pre>
+    <h2>history Object</h2>
+    <pre>
+        history Object(현재창 방문 기록)
+        history.back();//바로전주소 이동
+        history.forward();//다시 이동
+        history.go(number);//number 백,포워드
+    </pre>
+
+    <h2>navigator Object</h2>
+    <pre>
+        // navigator Object(브라우저 정보)
+        let 브라우저이름 = navigator.appName;
+        console.log(`브라우저이름 : ${브라우저이름}`);
+        let 브라우저코드이름 = navigator.appCodeName;
+        console.log(`브라우저코드이름 : ${브라우저코드이름}`);
+        let 브라우저버전 = navigator.appVersion;
+        console.log(`브라우저버전 : ${브라우저버전}`);
+        let 브라우저서버전송정보 = navigator.userAgent;
+        console.log(`브라우저서버전송정보 : ${브라우저서버전송정보}`);
+        if(브라우저서버전송정보.indexOf('Window')>=0){
+            console.log('윈도우운영체제');
+        }
+    </pre>
+    
+    
     <script>
         //window Object(모든 개체의 부모)
-        // window.open('http://www.naver.com');
-        // window.alert('http://www.naver.com');
-        // let msg = window.prompt('http://www.naver.com');
-        // let cof = window.confirm('http://www.naver.com');
-        // if(cof){
-        //     window.open(msg);
-        // }
+        
+        let msg = window.prompt('이동할 주소를 넣어주세요');
+        let cof = window.confirm(`정말로 ${msg}로 이동할까요?`);
+        if(cof){
+            window.open(msg);                
+        }
+        let cnt = 0;
+        
+        let sInt = window.setInterval(()=>{
+            console.log(cnt++);
+            if(cnt>=10){
+                clearInterval(sInt);
+            }
+        },1000);
 
-        // let cnt = 0;
-        // let sInt = window.setInterval(()=>{
-        //     console.log(cnt++);
-        //     if(cnt>=10){
-        //         clearInterval(sInt);
-        //     }
-        // },1000);
-        // let sTime = window.setTimeout(()=>{
-        //     document.querySelector('h1').innerHTML='하이';
-        // },10000);
+        
+        let sTime = window.setTimeout(()=>{            
+            document.querySelector('h1').innerHTML='하이';            
+        },10000);
 
-        // function cTime(){
-        //     clearTimeout(sTime);
-        // }
 
-        //screen Object (모니터 정보)
-        let scrWidth = screen.width;//모니터(화면)
-        let scrHeight = screen.height;//모니터(화면)
-        let scrDwidth = screen.availWidth;//모니터의 바탕화면
-        let scrDheight = screen.availHeight;//모니터의 바탕화면
-        console.log(`모니터 너비=${scrWidth}px, 모니터 높이=${scrHeight}px`);
+        function cTime(){
+            clearTimeout(sTime);
+        }
+
+
+        //screen Object(모니터 정보)
+        let scrWidth=screen.width;//모니터(화면)
+        let scrHeight=screen.height;//모니터(화면)
+        let scrDwidth=screen.availWidth//모니터의 바탕화면
+        let scrDheight=screen.availHeight//모니터의 바탕화면
+        console.log(`모니터 너비=${scrWidth}px,모니터 높이=${scrHeight}px`);
         console.log(`작업표시줄 높이=${scrHeight-scrDheight}px`);
-
-        //location Object
-        // location.href = 'https://www.naver.com';
-        let hostAddress = location.hostname;//도메인
-        console.log(hostAddress);
+        
+        //location Object(주소)
+        // location.href='https://www.naver.com';
+        let hostDomain = location.hostname;//도메인(domain)
+        console.log(hostDomain);
         let hostPath = location.pathname;//경로 파일명
         console.log(hostPath);
         let hostPro = location.protocol;//접속 프로토콜
         console.log(hostPro);
 
-        //history Object(현재창 방문기록)
-        //history.back();//바로 전 주소 이동
-        //history.forward();// 백하기 전 주소로 이동
+        //history Object(현재창 방문 기록)
+        //history.back();//바로전주소 이동
+        //history.forward();//다시 이동
         //history.go(number);//number 백,포워드
-        
-        //navigator Object(브라우저 정보)
+
+
+        // navigator Object(브라우저 정보)
         let 브라우저이름 = navigator.appName;
-        console.log(브라우저이름);
-        let 브라우저코드 = navigator.appCodeName;
-        console.log(브라우저코드);
+        console.log(`브라우저이름 : ${브라우저이름}`);
+        let 브라우저코드이름 = navigator.appCodeName;
+        console.log(`브라우저코드이름 : ${브라우저코드이름}`);
         let 브라우저버전 = navigator.appVersion;
-        console.log(브라우저버전);
-      
+        console.log(`브라우저버전 : ${브라우저버전}`);
+        let 브라우저서버전송정보 = navigator.userAgent;
+        console.log(`브라우저서버전송정보 : ${브라우저서버전송정보}`);
+        if(브라우저서버전송정보.indexOf('Window')>=0){
+            console.log('윈도우운영체제');
+        }
+
     </script>
 </body>
 </html>
