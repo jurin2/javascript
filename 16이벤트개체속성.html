@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>이벤트개체속성</title>
+<style>
+    #div{
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        background-color: #f00;
+    }
+    #result{
+        height: 3000px;
+        border: 1px solid #000;
+        padding: 30px;
+    }
+</style>
+</head>
+<body>
+    <h1>이벤트개체속성들</h1>
+    <h2>키보드 이벤트 속성</h2>
+    <input type="text" onkeydown="fnkey(event);">
+    <p id="inputTxt" style="border:1px solid #000;">&nbsp;</p>
+
+    <h2>마우스 이벤트 속성</h2>
+    <div id="div"></div>
+    <p id="result"></p>
+
+    <script>
+        function fnkey(event){
+            let _inTxt = document.getElementById('inputTxt');
+            let keyValue = event.key;
+            _inTxt.innerText += keyValue;
+        }
+
+        // function fnkey(event){
+        //     let _inTxt = document.getElementById('inputTxt');
+        //     let keyValue = event.ctrlKey;
+        //     if(keyValue){
+        //         _inTxt.innerText = '컨트롤키 눌림';
+        //     }else{
+        //         _inTxt.innerText = '컨트롤키 아닌키 눌림';
+        //     }
+        // }
+
+        let _div = document.getElementById('div');
+        let _result = document.getElementById('result');
+        console.log(_div);
+        console.log(_result);
+
+        _div.addEventListener('click',(event)=>{
+            _result.innerHTML = `pageX = ` + event.pageX + '<br>';
+            _result.innerHTML = `pageY = ` + event.pageY + '<br>';
+            _result.innerHTML = `screenX = ` + event.screenX + '<br>';
+            _result.innerHTML = `screenY = ` + event.screenY + '<br>';
+            _result.innerHTML = `clientX = ` + event.clientX + '<br>';
+            _result.innerHTML = `clientY = ` + event.clientY + '<br>';
+        })
+    </script>
+</body>
+</html>

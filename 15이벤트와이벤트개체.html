@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>이벤트와 이벤트개체</title>
+</head>
+<body>
+    <h1>이벤트와 이벤트개체</h1>
+    <h2>이벤트</h2>
+    <input type="button" value="버튼" onclick="fnEvent()">
+    <input type="text" placeholder="아무거나 입력하세요"
+    onfocus="
+        let _h1 = document.querySelector('h1');
+            _h1.style.color = '#f00';
+    " 
+
+    oninput="
+        let _all = document.querySelectorAll('*');
+        for(let idx=0; idx<all.length; idx++){
+            _all[idx].style.color = '#000';
+        }
+        // let _h1 = document.querySelector('h1');
+        // let _h2 = document.querySelector('h2');
+        //     _h1.style.color = '#000';
+        //     _h2.style.color = '#000'; 
+    ">
+
+    <br>
+    <input type="button" value="버튼2" id="btn02">
+    <input type="text" id="txt02" placeholder="아무거나 입력하세요">
+    <br>
+    <input type="button" value="버튼3" onclick="fneve(event)">
+    <br>
+    <a href="http://www.google.com" id="btn05">버튼5</a>
+    <div id="div" onmouseover="addTxt(this);" style="height:200px; background-color:#f00; line-height:200px; text-align:center; font-size:30px;">*</div>
+
+    <script>
+        function fnEvent(){
+            let _h2 = document.querySelector('h2');
+            _h2.style.color = '#f00';
+        }
+
+        let _h1 = document.querySelector('h1');
+        let _h2 = document.querySelector('h2');
+        let _btn02 = document.querySelector('#btn02');
+        let _txt02 = document.querySelector('#txt02');
+
+        _btn02.addEventListener('click',()=>{
+            _h2.style.color = '#0f0';
+        })
+        _txt02.addEventListener('focus',()=>{
+            _h1.style.color = '#0f0';
+        })
+        _txt02.addEventListener('change',()=>{
+            _h1.style.color = '#000';
+            _h2.style.color = '#000';
+        })
+
+        function fneve(event){
+            event.preventDefault;
+            _h1.style.color = '#00f';
+        }
+
+        let _btn05 = document.getElementById('btn05');
+        _btn05.addEventListener('click',(event)=>{
+            event.preventDefault();
+            _h1.style.color = '#0ff';
+            event.target.style.display = 'none';
+        })
+
+        function addTxt(self){
+            self.innerText = self.innerText + '*';
+        }
+        // function addTxt(event){
+        //     event.target.innerText = event.target.innerText + '*';
+        // }
+    </script>
+</body>
+</html>

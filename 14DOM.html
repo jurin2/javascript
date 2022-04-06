@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>DOM(Document Object Model) 문서개체</title>
+<style>
+    #mainTit{
+        color: #f00;
+    }
+</style>
+</head>
+<body>
+    <h1 id="mainTit">DOM(문서개체)</h1>
+    <ul>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+    </ul>
+
+    <script>
+        //DOM 접근
+        let node1 = document.querySelector('h1');
+        console.log(`돔에서 h1을 노드로 만듬 => ${node1}`);
+        let node1ID = document.querySelector('h1').id;
+        console.log(`돔에서 h1을 ID속성을 노드로 만듬 =>${node1ID}`);
+        let node1ID2 = node1.id;
+        console.log(`node1에서 ID속성을 노드로 만듬 =>${node1ID2}`);
+        let node1Text = node1.innerText;
+        console.log(`node1의 내용을 텍스트노드로 만듬 =>${node1Text}`);
+        let node1Style = node1.style;
+        console.log(`node1의 스타일 속성을 노드로 만듬 =>${node1Style}`);
+        console.log(`node1의 데이터타입 = ${typeof node1}`);
+        console.log(`node1의 아이디 데이터타입 = ${typeof node1ID}`);
+        console.log(`node1의 스타일 데이터타입 = ${typeof node1Style}`);
+
+        document.querySelector('h1').innerText = '개체문서(DOM)';
+        node1.innerText = '개체(Object) 문서(Document) 모델(Model)';
+        node1.style.backgroundColor = 'green';
+        node1.id = 'mainTitle';
+
+        let eleUI = document.querySelector('ul');
+        let eleLi = document.querySelectorAll('li');
+        let eleA = document.querySelectorAll('a');
+
+        console.log(eleLi);
+        console.log(eleA);
+
+        let txtA = new Array;
+
+        let newEleA = [...eleA];//개체카피
+
+
+        // for(let idx=0; idx<eleA.length; idx++){
+        //    console.log(`txtA[${idx}] = ${txtA[idx]}`);
+        // }
+
+        // eleA.forEach((item,idx,arr)=>{
+        //    txtA[idx] = item.innerText;
+        // })
+
+        // txtA.forEach((item,idx)=>{
+        //     console.log(`txtA[${idx}] = ${item}`);
+        // })
+
+        // let idx=0;
+        // for(item of eleA){
+        //     txtA[idx++] = item.innerText;
+        // }
+
+        
+        // idx=0;
+        // for(item of txtA){
+        //     console.log(`txtA[${idx}] = ${txtA[idx]}`);
+        //     idx++;
+        // }
+
+        newEleA.map((item,idx)=>{
+            txtA[idx] = item.innerText;
+        })
+        txtA.map((item,idx)=>{
+            console.log(`txtA[${idx}] = ${item}`);
+        });
+        
+    </script>
+</body>
+</html>
