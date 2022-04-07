@@ -35,4 +35,3 @@ let setColor ={
 
 export{setColor};
 
-// export {dark,light};
