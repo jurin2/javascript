@@ -1,73 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        h1{
-            font-size: 64px;
-            color: darkblue;
-            text-align: center;
-        }
-        button{
-            font-size: inherit;
-        }
-        ul,ol,li{
-            list-style: none;
-        }
-        ul a{
-            font-size: 42px;
-            color: darkblue;
-        }
+<meta charset="UTF-8">
+<title>WEB</title>
+<link rel="stylesheet" href="../default.css">
 
-    </style>
 </head>
 <body>
-    <h1><a href="./index.html">WEB</a></h1>
-    <button id="btn">NIGHT</button>
-    
+    <h1><a href="../index.html">WEB</a></h1>
+    <div>
+        <button>light</button>
+        <!-- <button id="white">White</button> -->
+        <ul>
+            <li><a href="../html.html">HTML</a></li>
+            <li><a href="../css.html">CSS</a></li>
+            <li><a href="../javascript.html">javaScript</a></li>
+        </ul>
 
-    <ul>
-        <li><a href="#" onclick="return false">html</a></li>
-        <li><a href="#" onclick="return false">css</a></li>
-        <li><a href="#" onclick="return false">javascript</a></li>
-    </ul>
-    <hr>
-    <h2>web이란 무엇인가?</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat excepturi ipsum inventore quia, earum, nemo dolorum tenetur non pariatur rem asperiores quisquam vel, eaque repudiandae aperiam omnis consequuntur impedit beatae!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat excepturi ipsum inventore quia, earum, nemo dolorum tenetur non pariatur rem asperiores quisquam vel, eaque repudiandae aperiam omnis consequuntur impedit beatae!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat excepturi ipsum inventore quia, earum, nemo dolorum tenetur non pariatur rem asperiores quisquam vel, eaque repudiandae aperiam omnis consequuntur impedit beatae!</p>
+        <hr>
 
-    <script src="user-function.js"></script>
-    <script>
-        let trigger = document.getElementById('btn');
-            trigger.onclick=function(){
-                inText(this);
-            }
+        <div class="content" id="content">
+            <h2>WEB란 무엇인가?</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis magnam aliquid ullam, eius cum voluptatum, molestiae magni sit atque soluta, id voluptas impedit nulla? Cumque impedit eius aliquam ipsa quidem.
+                Incidunt, pariatur! Impedit, dolores qui excepturi suscipit vel nam provident modi corporis sapiente incidunt similique delectus numquam possimus dolor totam quaerat. Laudantium aliquid praesentium mollitia, exercitationem explicabo non minus. Nemo?
+                Eum nemo deleniti vero odio, alias provident quidem repellendus minus accusamus voluptate architecto ipsa, dolore adipisci. Eos culpa ut sapiente unde repudiandae ipsam cum doloremque rerum, quisquam sint, repellendus quam?
+                Laudantium distinctio molestiae nobis. Molestias, saepe labore quidem omnis voluptatum beatae eveniet sint inventore recusandae doloribus qui molestiae maiores laborum fugiat placeat quos harum id obcaecati ducimus. Culpa, eaque sapiente?
+                Reprehenderit qui labore inventore commodi, magnam sequi illum officiis delectus provident praesentium repudiandae aspernatur quibusdam blanditiis? Distinctio in, facilis quas recusandae deserunt assumenda molestias minima odit consectetur eaque odio voluptatem?
+                Excepturi molestiae molestias aliquid a quidem ullam quae quibusdam alias esse, unde provident nulla dicta tempora, similique dignissimos reprehenderit velit? Aliquam consectetur ducimus nesciunt, odio quos id aperiam fugit necessitatibus.
+                Quaerat voluptatibus laboriosam impedit ut, eos sapiente, praesentium tempore non inventore eum fuga, vel ex tenetur fugit repellendus eius sint voluptates aut magnam quidem minus perferendis cum. Vitae, laudantium dolorem?
+                Alias facere consequuntur repellat vel voluptatibus pariatur hic debitis provident, at laboriosam inventore cumque culpa tenetur fuga dicta voluptatem aspernatur id, blanditiis libero enim quod similique soluta dolorem. Atque, deserunt.
+                Delectus inventore aperiam odio enim eligendi fugit perspiciatis adipisci eos porro ipsum recusandae consequatur, officiis nisi architecto. Ad ducimus exercitationem deleniti quis, repellendus itaque temporibus atque perspiciatis, nemo, saepe qui!
+                Laborum dicta praesentium vero aut repellat obcaecati, expedita rerum ex placeat inventore qui nam? Porro, maxime commodi quae nam nulla nobis cumque, totam sequi quos voluptatum consequatur, voluptatibus repellendus provident.
+            </p>
+        </div>
+    </div>
+    <script type="module" src="../default.js"></script>
 
-        function inText(self){
-            if(self.innerHTML == 'NIGHT'){
-                // 야간화면
-                self.innerHTML = 'DAY';
-                setStyle.bodyBgcolor('#000');
-                setStyle.aTagColor('lightblue');
-                setStyle.buttonColor('2px solid #fff','#000','#fff');
-                setStyle.h2Color('#fff');
-                setStyle.pTagColor('#ccc');
-            }else{
-                // 주간화면
-                self.innerHTML = 'NIGHT';
-                setStyle.bodyBgcolor('#fff');
-                setStyle.aTagColor('darkblue');
-                setStyle.buttonColor('2px outset #767676','#efefef','#000');
-                setStyle.h2Color('#000');
-                setStyle.pTagColor('#000');
-            }
-        }
-
-       
-    </script>
 </body>
 </html>

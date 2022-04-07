@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>가져오기(import) 내보내기(export)</title>
+</head>
+<body>
+    <button id="btn1">밤</button>
+    <button id="btn2">낮</button>
+
+    <script type="module">
+        import {tmp1,tmp2} from './tmp.js';
+        document.getElementById('btn1').addEventListener('click',()=>{
+            tmp1();
+        })
+        document.getElementById('btn2').addEventListener('click',()=>{
+            tmp2();
+        })
+
+    </script>
+
+</body>
+</html>
